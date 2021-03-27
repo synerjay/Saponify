@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from './components/Navbar/Navbar';
 import Products from './components/Products';
 import { commerce } from './lib/commerce';
@@ -21,6 +21,8 @@ function App() {
   }, []);
 
   console.log(products);
+
+  // Add products to Commerce.js website.... At least 8 products
 
   return (
     <div>
