@@ -21,11 +21,11 @@ const Navbar = () => {
           {/* Logo Website here */}
           <img
             src={logo}
-            alt='Commerce.js'
+            alt='Jayshop'
             height='25px'
             className={classes.image}
           />
-          Commerce.js
+          Jayshop
         </Typography>
         <div className={classes.grow} />
         {/* This self-closing div is to take as much space as we need */}
