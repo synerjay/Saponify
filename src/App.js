@@ -32,15 +32,11 @@ function App() {
     fetchCart();
   }, []);
 
-  console.log(cart);
-
-  console.log(products);
-
   // Add products to Commerce.js website.... At least 8 products
 
   return (
     <div>
-      <Navbar />
+      <Navbar totalItems={cart.total_items} />
       <Products products={products} onAddToCart={handleAddToCart} />
     </div>
   );

@@ -12,7 +12,7 @@ import React from 'react';
 import logo from '../../assets/commerce.png';
 import useStyles from './styles';
 
-const Navbar = () => {
+const Navbar = ({ totalItems }) => {
   const classes = useStyles();
   return (
     <AppBar position='fixed' className={classes.appBar} color='inherit'>
@@ -31,7 +31,7 @@ const Navbar = () => {
         {/* This self-closing div is to take as much space as we need */}
         <div className={classes.button}>
           <IconButton aria-label='Show car items' color='inherit'>
-            <Badge badgeContent={2} color='secondary'>
+            <Badge badgeContent={totalItems} color='secondary'>
               <ShoppingCart />
             </Badge>
           </IconButton>
