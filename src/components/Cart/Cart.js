@@ -1,8 +1,11 @@
+import classes from '*.module.css';
 import { Button, Container, Grid, Typography } from '@material-ui/core';
 import React, { Fragment } from 'react';
+import useStyles from './styles';
 
 const Cart = ({ cart }) => {
   const isEmpty = !cart.line_items.length;
+  const classes = useStyles();
 
   const EmptyCart = () => (
     <Typography variant='subtitle1'>
@@ -19,6 +22,31 @@ const Cart = ({ cart }) => {
           </Grid>
         ))}
       </Grid>
+      <div className={classes.cardDetails}>
+        <Typography variant='h4'>
+          Subtotal: {cart.subtotal.formatted_with_symbol}
+        </Typography>
+        <div>
+          <Button
+            className={classes.emptyButton}
+            size='large'
+            type='button'
+            variant='contained'
+            color='secondary'
+          >
+            Empty Cart
+          </Button>
+          <Button
+            className={classes.checkoutButton}
+            size='large'
+            type='button'
+            variant='contained'
+            color='primary'
+          >
+            Checkout
+          </Button>
+        </div>
+      </div>
     </Fragment>
   );
 
