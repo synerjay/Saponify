@@ -12,7 +12,7 @@ import useStyles from './styles';
 
 import React from 'react';
 
-const Product = ({ item }) => {
+const Product = ({ item, onAddToCart }) => {
   const classes = useStyles();
 
   return (
@@ -39,7 +39,10 @@ const Product = ({ item }) => {
           />
         </CardContent>
         <CardActions disableSpacing className={classes.cardActions}>
-          <IconButton aria-label='Add to Cart'>
+          <IconButton
+            aria-label='Add to Cart'
+            onClick={() => onAddToCart(item.id, 1)}
+          >
             <AddShoppingCart />
           </IconButton>
         </CardActions>
