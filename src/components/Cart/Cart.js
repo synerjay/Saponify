@@ -1,10 +1,9 @@
-import classes from '*.module.css';
 import { Button, Container, Grid, Typography } from '@material-ui/core';
 import React, { Fragment } from 'react';
 import useStyles from './styles';
 
 const Cart = ({ cart }) => {
-  const isEmpty = !cart.line_items.length;
+  const isEmpty = !cart.line_items;
   const classes = useStyles();
 
   const EmptyCart = () => (
