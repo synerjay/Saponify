@@ -5,6 +5,7 @@ import { commerce } from './lib/commerce';
 
 function App() {
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState({});
 
   // use useEffects to load the products
 
@@ -16,9 +17,16 @@ function App() {
     setProducts(data);
   };
 
+  const fetchCart = async () => {
+    setCart(await commerce.cart.retrieve());
+  };
+
   useEffect(() => {
     fetchProducts();
+    fetchCart();
   }, []);
+
+  console.log(cart);
 
   console.log(products);
 
