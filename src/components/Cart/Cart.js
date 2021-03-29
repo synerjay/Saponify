@@ -4,7 +4,12 @@ import { Link } from 'react-router-dom';
 import CartItem from './CarItem/CartItem';
 import useStyles from './styles';
 
-const Cart = ({ cart }) => {
+const Cart = ({
+  cart,
+  handleUpdateCartQty,
+  handleRemoveFromCart,
+  handleEmptyCart,
+}) => {
   const isEmpty = !cart.line_items;
   const classes = useStyles();
 
@@ -22,7 +27,11 @@ const Cart = ({ cart }) => {
       <Grid container spacing={3}>
         {cart.line_items.map((item) => (
           <Grid item xs={12} sm={4} key={item.id}>
-            <CartItem item={item} />
+            <CartItem
+              item={item}
+              handleUpdateCartQty={handleUpdateCartQty}
+              handleRemoveFromCart={handleRemoveFromCart}
+            />
           </Grid>
         ))}
       </Grid>
@@ -37,6 +46,7 @@ const Cart = ({ cart }) => {
             type='button'
             variant='contained'
             color='secondary'
+            onClick={handleEmptyCart}
           >
             Empty Cart
           </Button>
@@ -53,6 +63,7 @@ const Cart = ({ cart }) => {
       </div>
     </Fragment>
   );
+  if (!cart.line_items) return 'Loading...';
 
   return (
     <div>
@@ -62,7 +73,7 @@ const Cart = ({ cart }) => {
           {' '}
           Your Shopping Cart{' '}
         </Typography>
-        {isEmpty ? <EmptyCart /> : <FilledCart />}
+        {!cart.line_items.length ? <EmptyCart /> : <FilledCart />}
       </Container>
     </div>
   );
