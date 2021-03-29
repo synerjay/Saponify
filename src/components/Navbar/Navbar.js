@@ -20,7 +20,7 @@ const Navbar = ({ totalItems }) => {
   return (
     <AppBar position='fixed' className={classes.appBar} color='inherit'>
       <Toolbar>
-        <Typography component={Link} to='/'>
+        <Typography component={Link} to='/' className={classes.link}>
           {/* Logo Website here */}
           <img
             src={logo}
