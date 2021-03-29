@@ -25,15 +25,16 @@ const Product = ({ item, onAddToCart }) => {
         />
         <CardContent>
           <div className={classes.cardContent}>
-            <Typography variant='h5' gutterBottom>
+            <Typography variant='h6' gutterBottom>
               {item.name}
             </Typography>
-            <Typography variant='h5'>
+            <Typography variant='h6'>
               {item.price.formatted_with_symbol}
             </Typography>
           </div>
           <Typography
             dangerouslySetInnerHTML={{ __html: item.description }}
+            noWrap
             variant='body2'
             color='textSecondary'
           />
