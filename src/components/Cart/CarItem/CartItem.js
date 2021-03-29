@@ -7,6 +7,8 @@ import {
   Typography,
 } from '@material-ui/core';
 import React from 'react';
+import AddIcon from '@material-ui/icons/Add';
+import RemoveIcon from '@material-ui/icons/Remove';
 import useStyles from './styles';
 
 const CartItem = ({ item, handleUpdateCartQty, handleRemoveFromCart }) => {
@@ -26,22 +28,20 @@ const CartItem = ({ item, handleUpdateCartQty, handleRemoveFromCart }) => {
             {item.line_total.formatted_with_symbol}
           </Typography>
         </CardContent>
-        <CardActions className={classes.cardActions}>
+        <CardActions className={classes.cartActions}>
           <div className={classes.buttons}>
             <Button
               type='button'
-              size='small'
               onClick={() => handleUpdateCartQty(item.id, item.quantity - 1)}
             >
-              -
+              <RemoveIcon />
             </Button>
-            <Typography>{item.quantity}</Typography>
+            <Typography variant='h4'>{item.quantity}</Typography>
             <Button
               type='button'
-              size='small'
               onClick={() => handleUpdateCartQty(item.id, item.quantity + 1)}
             >
-              +
+              <AddIcon />
             </Button>
           </div>
           <Button

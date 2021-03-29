@@ -10,7 +10,6 @@ const Cart = ({
   handleRemoveFromCart,
   handleEmptyCart,
 }) => {
-  const isEmpty = !cart.line_items;
   const classes = useStyles();
 
   const EmptyCart = () => (
