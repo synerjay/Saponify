@@ -54,7 +54,7 @@ const Cart = ({ cart }) => {
     <div>
       <Container>
         <div className={classes.toolbar}></div>
-        <Typography className={classes.title} variant='h3'>
+        <Typography className={classes.title} variant='h3' gutterBottom>
           {' '}
           Your Shopping Cart{' '}
         </Typography>

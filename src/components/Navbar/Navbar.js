@@ -9,15 +9,18 @@ import {
 } from '@material-ui/core';
 import { ShoppingCart } from '@material-ui/icons';
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '../../assets/commerce.png';
 import useStyles from './styles';
 
 const Navbar = ({ totalItems }) => {
   const classes = useStyles();
+  const location = useLocation();
+
   return (
     <AppBar position='fixed' className={classes.appBar} color='inherit'>
       <Toolbar>
-        <Typography>
+        <Typography component={Link} to='/'>
           {/* Logo Website here */}
           <img
             src={logo}
@@ -29,13 +32,20 @@ const Navbar = ({ totalItems }) => {
         </Typography>
         <div className={classes.grow} />
         {/* This self-closing div is to take as much space as we need */}
-        <div className={classes.button}>
-          <IconButton aria-label='Show car items' color='inherit'>
-            <Badge badgeContent={totalItems} color='secondary'>
-              <ShoppingCart />
-            </Badge>
-          </IconButton>
-        </div>
+        {location.pathname === '/' && (
+          <div className={classes.button}>
+            <IconButton
+              component={Link}
+              to='/cart'
+              aria-label='Show car items'
+              color='inherit'
+            >
+              <Badge badgeContent={totalItems} color='secondary'>
+                <ShoppingCart />
+              </Badge>
+            </IconButton>
+          </div>
+        )}
       </Toolbar>
     </AppBar>
   );
