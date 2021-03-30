@@ -11,6 +11,7 @@ import { FormProvider, useForm } from 'react-hook-form';
 import FormInput from './CustomTextField';
 
 const AddressForm = () => {
+  // need useState hoo khere for shipping Countries and shit
   const methods = useForm();
 
   return (
@@ -27,6 +28,24 @@ const AddressForm = () => {
             <FormInput required name='email' label='Email' />
             <FormInput required name='city' label='City' />
             <FormInput required name='postal' label='ZIP / Postal Code' />
+            <Grid item xs={12} sm={6}>
+              <InputLabel>Shipping Country</InputLabel>
+              <Select fullWidth>
+                <MenuItem>Select Me</MenuItem>
+              </Select>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <InputLabel>Shipping Subdivisions</InputLabel>
+              <Select fullWidth>
+                <MenuItem>Select Me</MenuItem>
+              </Select>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <InputLabel>Shipping Options</InputLabel>
+              <Select fullWidth>
+                <MenuItem>Select Me</MenuItem>
+              </Select>
+            </Grid>
           </Grid>
         </form>
       </FormProvider>
