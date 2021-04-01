@@ -6,13 +6,19 @@ import {
   Select,
   Typography,
 } from '@material-ui/core';
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import FormInput from './CustomTextField';
 
-const AddressForm = () => {
+const AddressForm = ({ checkoutToken }) => {
   // need useState hoo khere for shipping Countries and shit
   const methods = useForm();
+  const [shippingCountries, setShippingCountries] = useState([]);
+  const [shippingCountry, setShippingCountry] = useState('');
+  const [shippingSubdivisions, setShippingSubdivisions] = useState([]);
+  const [shippingSubdivion, setShippingSubdivion] = useState('');
+  const [shippingOptions, setShippingOptions] = useState([]);
+  const [shippingOption, setShippingOption] = useState('');
 
   return (
     <Fragment>
