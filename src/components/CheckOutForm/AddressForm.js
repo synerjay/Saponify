@@ -6,9 +6,10 @@ import {
   Select,
   Typography,
 } from '@material-ui/core';
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import FormInput from './CustomTextField';
+import { commerce } from '../../lib/commerce';
 
 const AddressForm = ({ checkoutToken }) => {
   // need useState hoo khere for shipping Countries and shit
@@ -19,6 +20,20 @@ const AddressForm = ({ checkoutToken }) => {
   const [shippingSubdivion, setShippingSubdivion] = useState('');
   const [shippingOptions, setShippingOptions] = useState([]);
   const [shippingOption, setShippingOption] = useState('');
+
+  const fetchShippingCountries = async (checkouTokenId) => {
+    const { countries } = await commerce.services.localeListShippingCountries(
+      checkoutTokenId
+    );
+
+    setShippingCountries(countries);
+  };
+
+  // Component to mount so that it fetches the available countries from Commerce.js server
+
+  useEffect(() => {
+    fetchShippingCountries(checkoutToken.id);
+  }, []);
 
   return (
     <Fragment>
