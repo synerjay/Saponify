@@ -27,6 +27,7 @@ const AddressForm = ({ checkoutToken }) => {
     );
 
     setShippingCountries(countries);
+    setShippingCountry(Object.keys(countries)[0]);
   };
 
   // Component to mount so that it fetches the available countries from Commerce.js server
