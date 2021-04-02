@@ -10,6 +10,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import FormInput from './CustomTextField';
 import { commerce } from '../../lib/commerce';
+import { Link } from 'react-router-dom';
 
 const AddressForm = ({ checkoutToken }) => {
   // need useState hoo khere for shipping Countries and shit
@@ -102,6 +103,7 @@ const AddressForm = ({ checkoutToken }) => {
       <Typography variant='h6' gutterBottom>
         Shipping Address
       </Typography>
+
       <FormProvider {...methods}>
         <form>
           <Grid container spacing={3}>
@@ -154,6 +156,16 @@ const AddressForm = ({ checkoutToken }) => {
               </Select>
             </Grid>
           </Grid>
+          <br />
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Button component={Link} to='/cart' variant='outlined'>
+              Back to Cart
+            </Button>
+            <Button type='submit' variant='contained' color='primary'>
+              {' '}
+              Next
+            </Button>
+          </div>
         </form>
       </FormProvider>
     </Fragment>
