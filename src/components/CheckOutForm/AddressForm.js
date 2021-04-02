@@ -21,13 +21,15 @@ const AddressForm = ({ checkoutToken }) => {
   const [shippingOptions, setShippingOptions] = useState([]);
   const [shippingOption, setShippingOption] = useState('');
 
-  const fetchShippingCountries = async (checkouTokenId) => {
+  const fetchShippingCountries = async (checkoutTokenId) => {
     const { countries } = await commerce.services.localeListShippingCountries(
       checkoutTokenId
     );
 
+    console.log(countries);
     setShippingCountries(countries);
     setShippingCountry(Object.keys(countries)[0]);
+    // Object.keys(object) returns an array of Keys
   };
 
   // Component to mount so that it fetches the available countries from Commerce.js server
@@ -38,7 +40,7 @@ const AddressForm = ({ checkoutToken }) => {
 
   return (
     <Fragment>
-      <Typography variant='h6' gutterBottom>
+      {/* <Typography variant='h6' gutterBottom>
         Shipping Address
       </Typography>
       <FormProvider {...methods}>
@@ -70,7 +72,7 @@ const AddressForm = ({ checkoutToken }) => {
             </Grid>
           </Grid>
         </form>
-      </FormProvider>
+      </FormProvider> */}
     </Fragment>
   );
 };

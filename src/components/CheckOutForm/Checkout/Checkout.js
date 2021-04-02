@@ -29,23 +29,25 @@ const Checkout = ({ cart }) => {
     ) : (
       <PaymentForm />
     );
-
+  // In react, the JSX renders first and then useEffect,
+  // if you are using tokens or ids to fetch, use conditionals && before it renders!
   useEffect(() => {
-    if (cart.id) {
-      const generateToken = async () => {
-        try {
-          const token = await commerce.checkout.generateToken(cart.id, {
-            type: 'cart',
-          });
-
-          setCheckoutToken(token);
-        } catch {
-          if (activeStep !== steps.length) history.pushState('/');
-        }
-      };
-
-      generateToken();
-    }
+    const generateToken = async () => {
+      try {
+        const token = await commerce.checkout.generateToken(cart.id, {
+          type: 'cart',
+        });
+        console.log(token);
+        setCheckoutToken(token);
+      } catch {
+        // if (activeStep !== steps.length) history.pushState('/');
+      }
+    };
+    // Since you cannot make an async function in useEffect, you have to call the function below WITHIN the userEffect
+    generateToken();
+    console.log('below is the token');
+    console.log(checkoutToken);
+    console.log(cart.id);
   }, [cart]);
   return (
     <Fragment>
@@ -62,7 +64,11 @@ const Checkout = ({ cart }) => {
               </Step>
             ))}
           </Stepper>
-          {activeStep === steps.length ? <Confirmation /> : <Form />}
+          {activeStep === steps.length ? (
+            <Confirmation />
+          ) : (
+            checkoutToken && <Form />
+          )}
         </Paper>
       </main>
     </Fragment>

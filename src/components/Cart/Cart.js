@@ -1,5 +1,5 @@
 import { Button, Container, Grid, Typography } from '@material-ui/core';
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import CartItem from './CarItem/CartItem';
 import useStyles from './styles';
@@ -11,7 +11,9 @@ const Cart = ({
   handleEmptyCart,
 }) => {
   const classes = useStyles();
-
+  useEffect(() => {
+    console.log(cart);
+  });
   const EmptyCart = () => (
     <Typography variant='subtitle1'>
       You have no items in your shopping cart.{' '}
