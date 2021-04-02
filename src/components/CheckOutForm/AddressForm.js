@@ -12,7 +12,7 @@ import FormInput from './CustomTextField';
 import { commerce } from '../../lib/commerce';
 import { Link } from 'react-router-dom';
 
-const AddressForm = ({ checkoutToken }) => {
+const AddressForm = ({ checkoutToken, next }) => {
   // need useState hoo khere for shipping Countries and shit
   const methods = useForm();
   const [shippingCountries, setShippingCountries] = useState([]);
@@ -105,7 +105,18 @@ const AddressForm = ({ checkoutToken }) => {
       </Typography>
 
       <FormProvider {...methods}>
-        <form>
+        {/* On submit method is provided by react-hook-form the next prop function gets all the data from the checkOut */}
+        {/* We use spread ...data because the "data" only includes the Form Input but not the shippingCountry and shippingsub, etc */}
+        <form
+          onSubmit={methods.handleSubmit((data) =>
+            next({
+              ...data,
+              shippingCountry,
+              shippingSubdivision,
+              shippingOption,
+            })
+          )}
+        >
           <Grid container spacing={3}>
             <FormInput name='firstName' label='First name' />
             <FormInput name='lastName' label='Last name' />
