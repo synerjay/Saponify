@@ -21,6 +21,16 @@ const AddressForm = ({ checkoutToken }) => {
   const [shippingOptions, setShippingOptions] = useState([]);
   const [shippingOption, setShippingOption] = useState('');
 
+  console.log(shippingCountries);
+
+  // Make To make everything from object to an Array object
+  // Object.entries() method returns an array an array [[key, value], [key,value]]
+  // because now shippingCountries is an array, we can use map method to make it an array of objects
+  const countries = Object.entries(
+    shippingCountries
+  ).map(([code, country]) => ({ id: code, label: country }));
+  console.log(countries);
+
   const fetchShippingCountries = async (checkoutTokenId) => {
     const { countries } = await commerce.services.localeListShippingCountries(
       checkoutTokenId
@@ -40,7 +50,7 @@ const AddressForm = ({ checkoutToken }) => {
 
   return (
     <Fragment>
-      {/* <Typography variant='h6' gutterBottom>
+      <Typography variant='h6' gutterBottom>
         Shipping Address
       </Typography>
       <FormProvider {...methods}>
@@ -54,11 +64,19 @@ const AddressForm = ({ checkoutToken }) => {
             <FormInput required name='postal' label='ZIP / Postal Code' />
             <Grid item xs={12} sm={6}>
               <InputLabel>Shipping Country</InputLabel>
-              <Select fullWidth>
-                <MenuItem>Select Me</MenuItem>
+              <Select
+                value={shippingCountry}
+                fullWidth
+                onChange={(e) => setShippingCountry(e.target.value)}
+              >
+                {countries.map((country) => (
+                  <MenuItem key={country.id} value={country.id}>
+                    {country.label}
+                  </MenuItem>
+                ))}
               </Select>
             </Grid>
-            <Grid item xs={12} sm={6}>
+            {/* <Grid item xs={12} sm={6}>
               <InputLabel>Shipping Subdivisions</InputLabel>
               <Select fullWidth>
                 <MenuItem>Select Me</MenuItem>
@@ -69,10 +87,10 @@ const AddressForm = ({ checkoutToken }) => {
               <Select fullWidth>
                 <MenuItem>Select Me</MenuItem>
               </Select>
-            </Grid>
+            </Grid> */}
           </Grid>
         </form>
-      </FormProvider> */}
+      </FormProvider>
     </Fragment>
   );
 };
