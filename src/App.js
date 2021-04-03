@@ -7,8 +7,11 @@ import Products from './components/Products';
 import { commerce } from './lib/commerce';
 
 const App = () => {
+  //State Hooks
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
+  const [order, setOrder] = useState({});
+  const [errorMessage, setErrorMessage] = useState('');
 
   // use useEffects to load the products
 
@@ -48,6 +51,27 @@ const App = () => {
     setCart(cart);
   };
 
+  // Once the last order is sent, we need a fresh new cart
+  const refreshCart = async () => {
+    const newCart = await commerce.cart.refresh();
+
+    setCart(newCart);
+  };
+
+  const handleCaptureCheckout = async (checkoutTokenId, newOrder) => {
+    try {
+      const incomingOrder = await commerce.checkout.capture(
+        checkoutTokenId,
+        newOrder
+      );
+
+      setOrder(incomingOrder);
+      refreshCart(); // refreshes the cart
+    } catch (error) {
+      setErrorMessage(error.data.error.message);
+    }
+  };
+
   useEffect(() => {
     fetchProducts();
     fetchCart();
@@ -72,7 +96,12 @@ const App = () => {
             />
           </Route>
           <Route exact path='/checkout'>
-            <Checkout cart={cart} />
+            <Checkout
+              cart={cart}
+              order={order}
+              onCaptureCheckout={handleCaptureCheckout}
+              error={errorMessage}
+            />
           </Route>
         </Switch>
       </div>

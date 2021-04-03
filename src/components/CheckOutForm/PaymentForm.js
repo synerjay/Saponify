@@ -11,7 +11,13 @@ import Review from './Review';
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 // We use Stripe.js to use the credit card payments
-const PaymentForm = ({ checkoutToken, backStep, shippingData }) => {
+const PaymentForm = ({
+  checkoutToken,
+  backStep,
+  shippingData,
+  onCaptureCheckout,
+  nextStep,
+}) => {
   const handleSubmit = async (event, elements, stripe) => {
     //prevents the site to refresh when submitted
     event.preventDefault();
@@ -35,7 +41,7 @@ const PaymentForm = ({ checkoutToken, backStep, shippingData }) => {
           email: shippingData.email,
         },
         shipping: {
-          name: 'International',
+          name: 'Primary',
           street: shippingData.address1,
           town_city: shippingData.city,
           county_state: shippingData.shippingSubdivision,
@@ -50,6 +56,9 @@ const PaymentForm = ({ checkoutToken, backStep, shippingData }) => {
           },
         },
       };
+      onCaptureCheckout(checkoutToken.id, orderData); // this prop comes from App.js handleCaptureCheckOut
+
+      nextStep();
     }
   };
   return (
