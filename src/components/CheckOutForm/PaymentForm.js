@@ -36,6 +36,7 @@ const PaymentForm = ({
     if (error) {
       console.log(error);
     } else {
+      // Try to change the line_items to an object, because right now it is a mothafucking array
       const orderData = {
         line_items: checkoutToken.live.line_items,
         customer: {
