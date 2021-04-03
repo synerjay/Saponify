@@ -18,13 +18,16 @@ const PaymentForm = ({
   onCaptureCheckout,
   nextStep,
 }) => {
+  console.log(checkoutToken.live.line_items);
   const handleSubmit = async (event, elements, stripe) => {
     //prevents the site to refresh when submitted
     event.preventDefault();
 
     // if there are no stripe and elements then dont do handleSubmit
     if (!stripe || !elements) return;
+
     const cardElement = elements.getElement(CardElement);
+
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       card: cardElement,
@@ -41,7 +44,15 @@ const PaymentForm = ({
           email: shippingData.email,
         },
         shipping: {
-          name: 'Primary',
+          name: shippingData.firstName + ' ' + shippingData.lastName,
+          street: shippingData.address1,
+          town_city: shippingData.city,
+          county_state: shippingData.shippingSubdivision,
+          postal_zip_code: shippingData.zip,
+          country: shippingData.shippingCountry,
+        },
+        billing: {
+          name: shippingData.firstName + ' ' + shippingData.lastName,
           street: shippingData.address1,
           town_city: shippingData.city,
           county_state: shippingData.shippingSubdivision,
@@ -56,8 +67,10 @@ const PaymentForm = ({
           },
         },
       };
+      console.log(checkoutToken.live.line_items);
+      console.log(orderData);
       onCaptureCheckout(checkoutToken.id, orderData); // this prop comes from App.js handleCaptureCheckOut
-
+      console.log('FUCK!');
       nextStep();
     }
   };

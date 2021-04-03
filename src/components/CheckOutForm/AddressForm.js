@@ -123,7 +123,7 @@ const AddressForm = ({ checkoutToken, next }) => {
             <FormInput name='address1' label='Address' />
             <FormInput name='email' label='Email' />
             <FormInput name='city' label='City' />
-            <FormInput name='postal' label='ZIP / Postal Code' />
+            <FormInput name='zip' label='ZIP / Postal Code' />
             <Grid item xs={12} sm={6}>
               <InputLabel>Shipping Country</InputLabel>
               <Select

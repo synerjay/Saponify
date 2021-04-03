@@ -13,6 +13,7 @@ const App = () => {
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
 
+  console.log(errorMessage);
   // use useEffects to load the products
 
   const fetchProducts = async () => {
@@ -66,9 +67,12 @@ const App = () => {
       );
 
       setOrder(incomingOrder);
-      refreshCart(); // refreshes the cart
+      console.log('Is it Working??');
+      refreshCart();
     } catch (error) {
       setErrorMessage(error.data.error.message);
+      console.log("It's NOT working!!!!");
+      refreshCart();
     }
   };
 
