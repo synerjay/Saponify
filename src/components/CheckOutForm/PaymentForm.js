@@ -18,7 +18,22 @@ const PaymentForm = ({
   onCaptureCheckout,
   nextStep,
 }) => {
-  console.log(checkoutToken.live.line_items);
+  // make the stupid ass line_items turn from array to an object
+
+  const convertArrayToObject = (array, key) => {
+    const initialValue = {};
+    return array.reduce((obj, item) => {
+      return {
+        ...obj,
+        [item[key]]: item,
+      };
+    }, initialValue);
+  };
+
+  const itemsObject = convertArrayToObject(checkoutToken.live.line_items, 'id');
+
+  console.log(itemsObject);
+
   const handleSubmit = async (event, elements, stripe) => {
     //prevents the site to refresh when submitted
     event.preventDefault();
@@ -38,7 +53,7 @@ const PaymentForm = ({
     } else {
       // Try to change the line_items to an object, because right now it is a mothafucking array
       const orderData = {
-        line_items: checkoutToken.live.line_items,
+        line_items: itemsObject,
         customer: {
           firstname: shippingData.firstName,
           lastname: shippingData.lastName,
