@@ -52,7 +52,22 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
     nextStep();
   };
 
-  const Confirmation = () => <div>Confirmation</div>;
+  const Confirmation = () =>
+    order.customer ? (
+      <Fragment>
+        <Typography variant='h5'>
+          Thank you for your purchase, {order.customer.firstname}{' '}
+          {order.customer.lastname}!
+        </Typography>
+        <Divider classname={classes.divider} />
+        <div>Confirmation</div>
+      </Fragment>
+    ) : (
+      <div className={classes.spinner}>
+        <CircularProgress />
+      </div>
+    );
+
   console.log(activeStep);
   const Form = () =>
     activeStep === 0 ? (
