@@ -2,6 +2,7 @@ import useStyles from './styles';
 import {
   Button,
   CircularProgress,
+  CssBaseline,
   Divider,
   Paper,
   Step,
@@ -13,7 +14,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import AddressForm from '../AddressForm';
 import PaymentForm from '../PaymentForm';
 import { commerce } from '../../../lib/commerce';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const steps = ['Shipping address', 'Payment details'];
 
@@ -22,6 +23,7 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
   const [checkoutToken, setCheckoutToken] = useState(null);
   const [shippingData, setShippingData] = useState({});
   const classes = useStyles();
+  const history = useHistory();
   console.log(error);
 
   // In react, the JSX renders first and then useEffect,
@@ -34,8 +36,9 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
         });
         console.log(token);
         setCheckoutToken(token);
-      } catch {
-        // if (activeStep !== steps.length) history.pushState('/');
+      } catch (err) {
+        if (activeStep !== steps.length) history.pushState('/');
+        console.log(err);
       }
     };
     // Since you cannot make an async function in useEffect, you have to call the function below WITHIN the userEffect
@@ -115,6 +118,7 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
 
   return (
     <Fragment>
+      <CssBaseline />
       <div className={classes.toolbar} />
       <main className={classes.layout}>
         <Paper className={classes.paper}>
