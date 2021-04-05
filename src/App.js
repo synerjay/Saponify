@@ -13,7 +13,7 @@ const App = () => {
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
 
-  console.log(errorMessage);
+  console.log(order);
   // use useEffects to load the products
 
   const fetchProducts = async () => {
@@ -65,14 +65,13 @@ const App = () => {
         checkoutTokenId,
         newOrder
       );
-
+      console.log(incomingOrder);
       setOrder(incomingOrder);
       console.log('Is it Working??');
       refreshCart();
     } catch (error) {
       setErrorMessage(error.data.error.message);
       console.log("It's NOT working!!!!");
-      refreshCart();
     }
   };
 
