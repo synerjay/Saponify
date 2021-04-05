@@ -22,6 +22,7 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
   const [checkoutToken, setCheckoutToken] = useState(null);
   const [shippingData, setShippingData] = useState({});
   const classes = useStyles();
+  console.log(error);
 
   // In react, the JSX renders first and then useEffect,
   // if you are using tokens or ids to fetch, use conditionals && before it renders!
@@ -53,7 +54,7 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
     nextStep();
   };
 
-  const Confirmation = () =>
+  let Confirmation = () =>
     order.customer ? (
       <Fragment>
         <div>
@@ -67,8 +68,8 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
             Your order reference number is:{' '}
             <strong>{order.customer_reference}</strong>
             <br />
-            Please check your email for your order information to keep track of
-            your shipping order.
+            Please check your email for more information about the estimated
+            delivery times.
           </Typography>
         </div>
         <br />
@@ -85,7 +86,13 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
   if (error) {
     Confirmation = () => (
       <Fragment>
-        <Typography variant='h5'>Error: {error}</Typography>
+        <Typography variant='h6'>
+          Oops! There was something wrong with the transaction: <br />
+          <strong>{error}</strong>
+          <br />
+          Please try again another time.
+          <br />
+        </Typography>
         <br />
         <Button component={Link} variant='outlined' type='button' to='/'>
           Go back to the Shop
