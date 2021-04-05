@@ -13,7 +13,7 @@ const App = () => {
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
 
-  console.log(order);
+  console.log(errorMessage);
   // use useEffects to load the products
 
   const fetchProducts = async () => {
@@ -75,6 +75,10 @@ const App = () => {
     }
   };
 
+  const emptyErrors = () => {
+    setErrorMessage('');
+  };
+
   useEffect(() => {
     fetchProducts();
     fetchCart();
@@ -88,7 +92,11 @@ const App = () => {
         <Navbar totalItems={cart.total_items} />
         <Switch>
           <Route exact path='/'>
-            <Products products={products} onAddToCart={handleAddToCart} />
+            <Products
+              products={products}
+              onAddToCart={handleAddToCart}
+              emptyErrors={emptyErrors}
+            />
           </Route>
           <Route exact path='/cart'>
             <Cart

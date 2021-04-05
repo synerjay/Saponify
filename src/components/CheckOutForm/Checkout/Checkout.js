@@ -90,8 +90,6 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
           Oops! There was something wrong with the transaction: <br />
           <strong>{error}</strong>
           <br />
-          Please try again another time.
-          <br />
         </Typography>
         <br />
         <Button component={Link} variant='outlined' type='button' to='/'>
