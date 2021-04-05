@@ -38,7 +38,6 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
         setCheckoutToken(token);
       } catch (err) {
         if (activeStep !== steps.length) history.pushState('/');
-        console.log(err);
       }
     };
     // Since you cannot make an async function in useEffect, you have to call the function below WITHIN the userEffect
