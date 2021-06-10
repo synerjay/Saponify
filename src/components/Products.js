@@ -11,15 +11,12 @@ const Products = ({ products, onAddToCart, emptyErrors }) => {
   }, []);
 
   return (
-    <main className={classes.content}>
-      <div className={classes.toolbar} />
-      <Grid container justify='center' spacing={3}>
+    <main>
+      <div class='mt-8 grid gap-10 md:grid-cols-3'>
         {products.map((item) => (
-          <Grid item key={item.id} xs={12} sm={6} md={4} lg={4}>
-            <Product item={item} onAddToCart={onAddToCart} />
-          </Grid>
+          <Product item={item} onAddToCart={onAddToCart} />
         ))}
-      </Grid>
+      </div>
     </main>
   );
 };
