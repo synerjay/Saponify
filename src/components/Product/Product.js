@@ -6,7 +6,7 @@
 //   IconButton,
 //   Typography,
 // } from '@material-ui/core';
-// import { AddShoppingCart } from '@material-ui/icons';
+import { AddShoppingCart } from '@material-ui/icons';
 
 // import useStyles from './styles';
 
@@ -31,14 +31,23 @@ const Product = ({ item, onAddToCart }) => {
       />
       <div className='m-4'>
         <span className='font-bold'>{item.name}</span>
-        <span
+        <span className='block text-gray-500 text-sm'>
+          {item.price.formatted_with_symbol}
+        </span>
+        {/* <span
           dangerouslySetInnerHTML={{ __html: item.description }}
           className='block text-gray-500 text-sm'
-        />
+        /> */}
       </div>
       <div className='badge'>
         <span>In stock</span>
       </div>
+      <button
+        onClick={() => onAddToCart(item.id, 1)}
+        className='bg-white rounded-full absolute top-0 right-0 p-2 mr-2 mt-2 shadow-xl'
+      >
+        <AddShoppingCart />
+      </button>
     </div>
   );
 };
