@@ -2,8 +2,6 @@ import {
   AppBar,
   Badge,
   IconButton,
-  Menu,
-  MenuItem,
   Toolbar,
   Typography,
 } from '@material-ui/core';
@@ -22,12 +20,7 @@ const Navbar = ({ totalItems }) => {
       <Toolbar>
         <Typography component={Link} to='/' className={classes.link}>
           {/* Logo Website here */}
-          <img
-            src={logo}
-            alt='Jayshop'
-            height='25px'
-            className={classes.image}
-          />
+          <img src={logo} alt='Jayshop' height='25px' className='h-7 w-7' />
           Jayshop
         </Typography>
         <div className={classes.grow} />
