@@ -1,5 +1,6 @@
-import { Grid } from '@material-ui/core';
+// import { Grid } from '@material-ui/core';
 import React, { useEffect } from 'react';
+import CarouselSlide from './Carousel/Carousel';
 import Product from './Product/Product';
 import useStyles from './styles';
 
@@ -11,7 +12,8 @@ const Products = ({ products, onAddToCart, emptyErrors }) => {
   }, []);
 
   return (
-    <main className='mt-5 md:mt-20'>
+    <main className='flex flex-col justify-center mt-5 md:mt-20'>
+      <CarouselSlide />
       <div className='mt-8 p-16 grid gap-10 md:grid-cols-3'>
         {products.map((item) => (
           <Product item={item} onAddToCart={onAddToCart} />
