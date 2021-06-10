@@ -13,9 +13,9 @@ const Products = ({ products, onAddToCart, emptyErrors }) => {
   return (
     <main className={classes.content}>
       <div className={classes.toolbar} />
-      <Grid container justify='center' spacing={4}>
+      <Grid container justify='center' spacing={3}>
         {products.map((item) => (
-          <Grid item key={item.id} xs={12} sm={6} md={4} lg={3}>
+          <Grid item key={item.id} xs={12} sm={6} md={4} lg={4}>
             <Product item={item} onAddToCart={onAddToCart} />
           </Grid>
         ))}
@@ -25,34 +25,3 @@ const Products = ({ products, onAddToCart, emptyErrors }) => {
 };
 
 export default Products;
-
-// function Products() {
-//   const productsArray = [
-//     {
-//       name: "Yoshi's birthday bash",
-//       description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-//       title: 'reminders',
-//       id: 1,
-//     },
-//     {
-//       name: 'Complete my ninja training',
-//       description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took.",
-//       title: 'work',
-//       id: 2,
-//     },
-//   ];
-
-//   return (
-//     <main>
-//       <Grid container justify='center' spacing={4}>
-//         {productsArray.map((item) => (
-//           <Grid item key={item.id} xs={12} sm={6} md={4} lg={3}>
-//             <Product item={item} />
-//           </Grid>
-//         ))}
-//       </Grid>
-//     </main>
-//   );
-// }
-
-// export default Products;
