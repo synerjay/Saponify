@@ -11,8 +11,8 @@ const Products = ({ products, onAddToCart, emptyErrors }) => {
   }, []);
 
   return (
-    <main>
-      <div className='mt-8 grid gap-10 md:grid-cols-3'>
+    <main className='mt-5 md:mt-20'>
+      <div className='mt-8 p-16 grid gap-10 md:grid-cols-3'>
         {products.map((item) => (
           <Product item={item} onAddToCart={onAddToCart} />
         ))}
