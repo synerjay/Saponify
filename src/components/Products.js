@@ -12,9 +12,9 @@ const Products = ({ products, onAddToCart, emptyErrors }) => {
   }, []);
 
   return (
-    <main className='flex flex-col justify-center mt-5 md:mt-20'>
+    <main className='flex flex-col justify-center mt-16 md:mt-20'>
       <CarouselSlide />
-      <div className='mt-8 p-16 grid gap-10 md:grid-cols-3'>
+      <div className='mt-2 p-3 md:p-16 grid gap-10 md:grid-cols-3'>
         {products.map((item) => (
           <Product item={item} onAddToCart={onAddToCart} />
         ))}
