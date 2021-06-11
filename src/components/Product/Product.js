@@ -27,10 +27,6 @@ const Product = ({ item, onAddToCart }) => {
           <span className='block text-gray-500 text-sm'>
             {item.price.formatted_with_symbol}
           </span>
-          {/* <span
-          dangerouslySetInnerHTML={{ __html: item.description }}
-          className='block text-gray-500 text-sm'
-        /> */}
         </div>
       </Link>
       <div className='badge'>

@@ -24,6 +24,7 @@ function ProductProfile({ products, match, fetchProducts }) {
   //Once products state has changed, it fires the getProductInfo function
   useEffect(() => {
     getProductInfoById(match.params.id);
+    console.log(item);
   }, [products]);
 
   return (
