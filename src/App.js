@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Cart from './components/Cart/Cart';
 import Checkout from './components/CheckOutForm/Checkout/Checkout';
 import Navbar from './components/Navbar/Navbar';
+import Product from './components/Product/Product';
+import ProductProfile from './components/Product/ProductProfile';
 import Products from './components/Products';
 import { commerce } from './lib/commerce';
 
@@ -98,6 +100,19 @@ const App = () => {
               emptyErrors={emptyErrors}
             />
           </Route>
+          {/* <Route
+            exact
+            path='/product/:id'
+            component={ProductProfile}
+            products={products}
+          /> */}
+          <Route
+            exact
+            path='/product/:id'
+            render={(props) => (
+              <ProductProfile {...props} products={products} />
+            )}
+          />
           <Route exact path='/cart'>
             <Cart
               cart={cart}

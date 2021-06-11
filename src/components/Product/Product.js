@@ -1,6 +1,7 @@
 import { AddShoppingCart } from '@material-ui/icons';
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Product = ({ item, onAddToCart }) => {
   console.log(item);
@@ -14,13 +15,17 @@ const Product = ({ item, onAddToCart }) => {
 
   return (
     <div className='card hover:shadow-xl'>
-      <img
-        src={item.media.source}
-        alt='noodles'
-        className='w-full h-32 sm:h-48 object-cover'
-      />
+      <Link to={`/product/${item.id}`}>
+        <img
+          src={item.media.source}
+          alt='noodles'
+          className='w-full h-32 sm:h-48 object-cover'
+        />
+      </Link>
       <div className='m-4'>
-        <span className='font-bold'>{item.name}</span>
+        <Link to={`/product/${item.id}`}>
+          <span className='font-bold'>{item.name}</span>
+        </Link>
         <span className='block text-gray-500 text-sm'>
           {item.price.formatted_with_symbol}
         </span>
