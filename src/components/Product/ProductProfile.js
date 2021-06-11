@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-function ProductProfile({ products, match }) {
+function ProductProfile({ products, match, fetchProducts }) {
   const [item, setItem] = useState(null);
 
   // important parts of the Product Component are:
@@ -18,9 +18,15 @@ function ProductProfile({ products, match }) {
     console.log(match);
   };
 
+  // Fetch Products at start up
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  //Once products state has changed, it fires the getProductInfo function
   useEffect(() => {
     getProductInfoById(match.params.id);
-  }, []);
+  }, [products]);
 
   return (
     <div className='mt-40 '>

@@ -100,17 +100,15 @@ const App = () => {
               emptyErrors={emptyErrors}
             />
           </Route>
-          {/* <Route
-            exact
-            path='/product/:id'
-            component={ProductProfile}
-            products={products}
-          /> */}
           <Route
             exact
             path='/product/:id'
             render={(props) => (
-              <ProductProfile {...props} products={products} />
+              <ProductProfile
+                {...props}
+                products={products}
+                fetchProducts={fetchProducts}
+              />
             )}
           />
           <Route exact path='/cart'>
