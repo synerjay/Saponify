@@ -108,6 +108,7 @@ const App = () => {
                 {...props}
                 products={products}
                 fetchProducts={fetchProducts}
+                onAddToCart={handleAddToCart}
               />
             )}
           />
