@@ -30,10 +30,12 @@ function ProductProfile({ products, match, fetchProducts }) {
 
   return (
     <div className='mt-40 '>
-      <h2 className='text-black'>
-        {' '}
-        This is the product profile with the item number: {match.params.id}{' '}
-      </h2>
+      {item && (
+        <h2 className='text-black'>
+          {' '}
+          The name of the product is: {item.name}{' '}
+        </h2>
+      )}
     </div>
   );
 }
