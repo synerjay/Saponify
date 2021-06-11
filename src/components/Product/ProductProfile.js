@@ -14,8 +14,6 @@ function ProductProfile({ products, match, fetchProducts }) {
   const getProductInfoById = (productId) => {
     const item = products.find((item) => item.id === productId);
     setItem(item);
-    console.log(item);
-    console.log(match);
   };
 
   // Fetch Products at start up

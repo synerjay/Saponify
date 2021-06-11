@@ -21,19 +21,18 @@ const Product = ({ item, onAddToCart }) => {
           alt='noodles'
           className='w-full h-32 sm:h-48 object-cover'
         />
-      </Link>
-      <div className='m-4'>
-        <Link to={`/product/${item.id}`}>
+        <div className='m-4'>
           <span className='font-bold'>{item.name}</span>
-        </Link>
-        <span className='block text-gray-500 text-sm'>
-          {item.price.formatted_with_symbol}
-        </span>
-        {/* <span
+
+          <span className='block text-gray-500 text-sm'>
+            {item.price.formatted_with_symbol}
+          </span>
+          {/* <span
           dangerouslySetInnerHTML={{ __html: item.description }}
           className='block text-gray-500 text-sm'
         /> */}
-      </div>
+        </div>
+      </Link>
       <div className='badge'>
         <span>In stock</span>
       </div>
