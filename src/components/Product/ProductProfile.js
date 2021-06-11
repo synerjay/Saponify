@@ -30,7 +30,7 @@ function ProductProfile({ products, match, fetchProducts }) {
   return (
     <div className='mt-20 w-screen'>
       {item && (
-        <div className='flex flex-row justify-center'>
+        <div className='flex flex-row justify-center gap-x-14 '>
           <div className='flex flex-col'>
             <img
               class='h-full w-full rounded-md object-cover max-w-lg mx-auto'
@@ -48,7 +48,7 @@ function ProductProfile({ products, match, fetchProducts }) {
               className='block text-gray-500 text-sm'
             />
           </div>
-          <div className='flex flex-col'>
+          <div className='flex flex-col w-72 '>
             <span className='text-gray-500 mt-3'>
               {item.price.formatted_with_symbol}
             </span>
