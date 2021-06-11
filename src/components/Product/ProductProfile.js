@@ -29,10 +29,21 @@ function ProductProfile({ products, match, fetchProducts }) {
   return (
     <div className='mt-40 '>
       {item && (
-        <h2 className='text-black'>
-          {' '}
-          The name of the product is: {item.name}{' '}
-        </h2>
+        <div className='text-black'>
+          <img
+            src={item.media.source}
+            alt='noodles'
+            className='w-full h-32 sm:h-48 object-cover'
+          />{' '}
+          <span className='font-bold'>{item.name}</span>
+          <span className='block text-gray-500 text-sm'>
+            {item.price.formatted_with_symbol}
+          </span>
+          <span
+            dangerouslySetInnerHTML={{ __html: item.description }}
+            className='block text-gray-500 text-sm'
+          />
+        </div>
       )}
     </div>
   );

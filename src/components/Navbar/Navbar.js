@@ -25,7 +25,8 @@ const Navbar = ({ totalItems }) => {
         </Typography>
         <div className={classes.grow} />
         {/* This self-closing div is to take as much space as we need */}
-        {location.pathname === '/' && (
+        {location.pathname === '/cart' ||
+        location.pathname === '/checkout' ? null : (
           <div className={classes.button}>
             <IconButton
               component={Link}
