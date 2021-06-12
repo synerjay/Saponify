@@ -39,7 +39,8 @@ const Product = ({ item, onAddToCart }) => {
       </div>
       <button
         onClick={() => onAddToCart(item.id, 1)}
-        className='bg-white rounded-full absolute top-0 right-0 p-2 mr-2 mt-2 shadow-xl'
+        className='bg-white rounded-full absolute top-0 right-0 p-2 mr-2 mt-2 shadow-xl disabled:opacity-50'
+        disabled={item.is.sold_out}
       >
         <AddShoppingCart />
       </button>
