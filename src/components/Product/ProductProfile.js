@@ -44,17 +44,24 @@ function ProductProfile({ products, match, fetchProducts, onAddToCart }) {
     <div className='mt-20 w-screen'>
       {item && (
         <div className='flex flex-row justify-center gap-x-14 '>
-          <div className='flex flex-col'>
+          <div className='flex flex-col relative'>
             <img
               class='h-full w-full rounded-md object-cover max-w-lg mx-auto'
               src={item.media.source}
               alt='Nike Air'
             />
-            {/* <img
-              src={item.media.source}
-              alt='noodles'
-              className='w-auto h-auto sm:h-48 object-cover'
-            />{' '} */}
+            <div
+              className={
+                'badge text-white text-2xl absolute top-0 p-4 ml-2 mt-2 ' +
+                (item.is.sold_out ? 'bg-red-500 ' : 'bg-green-500')
+              }
+            >
+              {item.is.sold_out ? (
+                <span> Sold Out</span>
+              ) : (
+                <span>In Stock </span>
+              )}
+            </div>
           </div>
           <div className='flex flex-col w-72 '>
             <h1 className='font-bold text-2xl'>{item.name}</h1>

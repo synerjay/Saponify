@@ -31,7 +31,7 @@ const Product = ({ item, onAddToCart }) => {
       </Link>
       <div
         className={
-          'badge text-white text-xs ' +
+          'badge text-white text-xs absolute top-0 p-2 ml-2 mt-2 ' +
           (item.is.sold_out ? 'bg-red-500 ' : 'bg-green-500')
         }
       >
