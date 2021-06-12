@@ -21,7 +21,7 @@ const Navbar = ({ totalItems }) => {
         <Typography component={Link} to='/' className={classes.link}>
           {/* Logo Website here */}
           <img src={logo} alt='Jayshop' height='25px' className='h-7 w-7' />
-          Jayshop
+          <h2 className='font-body'>Jayshop</h2>
         </Typography>
         <div className={classes.grow} />
         {/* This self-closing div is to take as much space as we need */}
