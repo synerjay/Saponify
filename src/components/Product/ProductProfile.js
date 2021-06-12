@@ -52,7 +52,7 @@ function ProductProfile({ products, match, fetchProducts, onAddToCart }) {
             />
             <div
               className={
-                'badge text-white text-2xl absolute top-0 p-4 ml-2 mt-2 ' +
+                'badge text-white text-xl absolute top-0 p-4 ml-2 mt-2 ' +
                 (item.is.sold_out ? 'bg-red-500 ' : 'bg-green-500')
               }
             >
