@@ -4,7 +4,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Product = ({ item, onAddToCart }) => {
-  console.log(item);
+  console.log(item.is.sold_out);
   // important parts of the Product Component are:
   // IMAGE OF ITEM: item.media.source
   // NAME OF ITEM: item.name
@@ -29,8 +29,13 @@ const Product = ({ item, onAddToCart }) => {
           </span>
         </div>
       </Link>
-      <div className='badge'>
-        <span>In stock</span>
+      <div
+        className={
+          'badge text-white text-xs ' +
+          (item.is.sold_out ? 'bg-red-700' : 'bg-green-500')
+        }
+      >
+        {item.is.sold_out ? <span> Sold Out</span> : <span>In Stock </span>}
       </div>
       <button
         onClick={() => onAddToCart(item.id, 1)}

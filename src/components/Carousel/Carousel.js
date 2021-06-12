@@ -24,9 +24,6 @@ function CarouselSlide() {
       width='100%'
     >
       <div>
-        <img className='h-4/6' alt='' src={carousel1} />
-      </div>
-      <div>
         <img className='h-4/6' alt='' src={carousel2} />
       </div>
       <div>
@@ -34,6 +31,9 @@ function CarouselSlide() {
       </div>
       <div>
         <img className='h-4/6' alt='' src={carousel4} />
+      </div>
+      <div>
+        <img className='h-4/6' alt='' src={carousel1} />
       </div>
       <div>
         <img className='h-4/6' alt='' src={carousel5} />

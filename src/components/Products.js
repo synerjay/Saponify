@@ -6,7 +6,6 @@ import useStyles from './styles';
 
 const Products = ({ products, onAddToCart, emptyErrors }) => {
   const classes = useStyles();
-  const reverseProducts = products.reverse();
   useEffect(() => {
     emptyErrors();
   }, []);
@@ -15,7 +14,7 @@ const Products = ({ products, onAddToCart, emptyErrors }) => {
     <main className='flex flex-col justify-center mt-16 md:mt-16'>
       <CarouselSlide />
       <div className='mt-2 p-5 md:p-16 grid gap-10 md:grid-cols-3'>
-        {reverseProducts.map((item) => (
+        {products.map((item) => (
           <Product item={item} onAddToCart={onAddToCart} />
         ))}
       </div>
