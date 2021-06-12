@@ -32,7 +32,7 @@ const Product = ({ item, onAddToCart }) => {
       <div
         className={
           'badge text-white text-xs ' +
-          (item.is.sold_out ? 'bg-red-700' : 'bg-green-500')
+          (item.is.sold_out ? 'bg-red-500 ' : 'bg-green-500')
         }
       >
         {item.is.sold_out ? <span> Sold Out</span> : <span>In Stock </span>}

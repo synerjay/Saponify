@@ -74,6 +74,7 @@ function ProductProfile({ products, match, fetchProducts, onAddToCart }) {
                 <button
                   onClick={handleIncrement}
                   className='text-gray-500 focus:outline-none focus:text-gray-600'
+                  disabled={item.is.sold_out}
                 >
                   <svg
                     className='h-5 w-5'
@@ -91,6 +92,7 @@ function ProductProfile({ products, match, fetchProducts, onAddToCart }) {
                 <button
                   onClick={handleDecrement}
                   className='text-gray-500 focus:outline-none focus:text-gray-600'
+                  disabled={item.is.sold_out}
                 >
                   <svg
                     className='h-5 w-5'
@@ -110,7 +112,7 @@ function ProductProfile({ products, match, fetchProducts, onAddToCart }) {
                 class='flex uppercase mt-5 px-3 py-2 bg-yellow-200 text-yellow-900 text-sm font-medium rounded hover:bg-yellow-300 focus:outline-none focus:bg-yellow-500 disabled:opacity-30'
                 disabled={item.is.sold_out}
               >
-                Add to cart{' '}
+                {item.is.sold_out ? <p>Sold Out</p> : <p>Add to Cart</p>}{' '}
                 <svg
                   className='ml-2 h-5 w-5 mr-0'
                   fill='none'
