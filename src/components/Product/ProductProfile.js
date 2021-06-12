@@ -107,7 +107,8 @@ function ProductProfile({ products, match, fetchProducts, onAddToCart }) {
               </div>
               <button
                 onClick={() => onAddToCart(item.id, quantity)}
-                class='flex uppercase mt-5 px-3 py-2 bg-indigo-600 text-white text-sm font-medium rounded hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500'
+                class='flex uppercase mt-5 px-3 py-2 bg-yellow-200 text-yellow-900 text-sm font-medium rounded hover:bg-yellow-300 focus:outline-none focus:bg-yellow-500 disabled:opacity-30'
+                disabled={item.is.sold_out}
               >
                 Add to cart{' '}
                 <svg
