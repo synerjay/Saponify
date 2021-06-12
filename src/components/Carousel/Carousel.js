@@ -5,6 +5,7 @@ import { Carousel } from 'react-responsive-carousel';
 function CarouselSlide() {
   // API to get images: https://source.unsplash.com/1024x400/?fashion
 
+  //https://source.unsplash.com/400x400/?watches
   return (
     <Carousel
       autoPlay={true}
