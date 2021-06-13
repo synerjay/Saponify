@@ -48,7 +48,7 @@ function ProductProfile({ products, match, fetchProducts, onAddToCart }) {
             <img
               class='h-full w-full rounded-md object-cover max-w-lg mx-auto'
               src={item.media.source}
-              alt='Nike Air'
+              alt={item.name}
             />
             <div
               className={
@@ -64,7 +64,7 @@ function ProductProfile({ products, match, fetchProducts, onAddToCart }) {
             </div>
           </div>
           <div className='flex flex-col w-72 '>
-            <h1 className='font-bold text-2xl'>{item.name}</h1>
+            <h1 className='font-bold text-yellow-900 text-2xl'>{item.name}</h1>
             <span
               dangerouslySetInnerHTML={{ __html: item.description }}
               className='block text-gray-500 text-sm'
@@ -116,7 +116,7 @@ function ProductProfile({ products, match, fetchProducts, onAddToCart }) {
               </div>
               <button
                 onClick={() => onAddToCart(item.id, quantity)}
-                class='flex uppercase mt-5 px-3 py-2 bg-yellow-200 text-yellow-900 text-sm font-medium rounded hover:bg-yellow-300 focus:outline-none focus:bg-yellow-500 disabled:opacity-30'
+                class='flex uppercase mt-5 px-3 py-2 bg-yellow-900 text-white text-sm font-medium rounded hover:bg-yellow-800 focus:outline-none focus:bg-yellow-800 disabled:opacity-30'
                 disabled={item.is.sold_out}
               >
                 {item.is.sold_out ? <p>Sold Out</p> : <p>Add to Cart</p>}{' '}

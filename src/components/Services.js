@@ -7,7 +7,7 @@ import { faHeadset } from '@fortawesome/free-solid-svg-icons';
 function Services() {
   return (
     <div className='w-screen mt-2 p-2 md:p-5 grid gap-5 md:grid-cols-3'>
-      <div className='flex flex-col items-center'>
+      <div className='flex md:flex-col items-center'>
         <FontAwesomeIcon
           className='text-4xl md:text-8xl text-yellow-900 '
           icon={faShippingFast}
@@ -17,7 +17,7 @@ function Services() {
           same-day delivery with orders over $40
         </p>
       </div>
-      <div className='flex flex-col items-center'>
+      <div className='flex md:flex-col items-center'>
         <FontAwesomeIcon
           className='text-4xl md:text-8xl text-yellow-900 '
           icon={faHandHoldingHeart}
@@ -27,7 +27,7 @@ function Services() {
           with high quality ingredients and absolutely no animal fats used
         </p>
       </div>
-      <div className='flex flex-col items-center'>
+      <div className='flex md:flex-col items-center'>
         <FontAwesomeIcon
           className='text-4xl md:text-8xl text-yellow-900 '
           icon={faHeadset}

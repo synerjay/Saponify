@@ -15,7 +15,11 @@ const Products = ({ products, onAddToCart, emptyErrors }) => {
     <main className='flex flex-col justify-center mt-16 md:mt-16'>
       <CarouselSlide />
       <Services />
-      <div className='mt-2 p-5 md:p-16 grid gap-10 md:grid-cols-3'>
+      <hr className='my-3'></hr>
+      <h1 className='mt-7 text-center text-4xl underline text-yellow-900 uppercase'>
+        Our Products
+      </h1>
+      <div className='mt-0 p-5 md:px-16 grid gap-10 md:grid-cols-3'>
         {products.map((item) => (
           <Product item={item} onAddToCart={onAddToCart} />
         ))}
