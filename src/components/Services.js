@@ -12,7 +12,7 @@ function Services() {
           className='text-4xl md:text-8xl text-yellow-900 '
           icon={faShippingFast}
         />
-        <p className='text-center mt-4'>
+        <p className='ml-6 md:ml-0 md:text-center mt-4'>
           <strong className='text-yellow-900 '>Free fast shipping</strong> and
           same-day delivery with orders over $40
         </p>
@@ -22,7 +22,7 @@ function Services() {
           className='text-4xl md:text-8xl text-yellow-900 '
           icon={faHandHoldingHeart}
         />
-        <p className='text-center mt-4'>
+        <p className='ml-6 md:ml-0 md:text-center mt-4'>
           <strong className='text-yellow-900 '>Carefully handcrafted</strong>{' '}
           with high quality ingredients and absolutely no animal fats used
         </p>
@@ -32,7 +32,7 @@ function Services() {
           className='text-4xl md:text-8xl text-yellow-900 '
           icon={faHeadset}
         />
-        <p className='text-center mt-4'>
+        <p className='ml-6 md:ml-0 md:text-center mt-4'>
           <strong className='text-yellow-900 '>
             Support staff on standby 24/7
           </strong>{' '}
