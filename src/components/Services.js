@@ -24,7 +24,8 @@ function Services() {
         />
         <p className='ml-6 md:ml-0 md:text-center mt-4'>
           <strong className='text-yellow-900 '>Carefully handcrafted</strong>{' '}
-          with high quality ingredients and absolutely no animal fats used
+          with high quality artisan ingredients and absolutely no animal fats
+          used
         </p>
       </div>
       <div className='flex md:flex-col items-center'>
