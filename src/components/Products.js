@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import CarouselSlide from './Carousel/Carousel';
 import Product from './Product/Product';
+import Services from './Services';
 import useStyles from './styles';
 
 const Products = ({ products, onAddToCart, emptyErrors }) => {
@@ -13,6 +14,7 @@ const Products = ({ products, onAddToCart, emptyErrors }) => {
   return (
     <main className='flex flex-col justify-center mt-16 md:mt-16'>
       <CarouselSlide />
+      <Services />
       <div className='mt-2 p-5 md:p-16 grid gap-10 md:grid-cols-3'>
         {products.map((item) => (
           <Product item={item} onAddToCart={onAddToCart} />
