@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Cart from './components/Cart/Cart';
 import Checkout from './components/CheckOutForm/Checkout/Checkout';
+import Footer from './components/Footer';
 import Navbar from './components/Navbar/Navbar';
 import Product from './components/Product/Product';
 import ProductProfile from './components/Product/ProductProfile';
@@ -129,6 +130,7 @@ const App = () => {
             />
           </Route>
         </Switch>
+        <Footer />
       </div>
     </Router>
   );
