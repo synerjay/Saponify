@@ -41,12 +41,12 @@ function ProductProfile({ products, match, fetchProducts, onAddToCart }) {
   }, [products]);
 
   return (
-    <div className='mt-20 w-screen mb-36 '>
+    <div className='mt-20 w-screen md:mb-36 '>
       {item && (
         <div className='flex flex-col md:flex-row justify-center gap-x-14 '>
           <div className='flex flex-col relative'>
             <img
-              class='h-32 w-full md:h-full rounded-md object-cover max-w-lg mx-auto'
+              class='h-32 mx-auto w-full md:h-full md:rounded-md object-cover max-w-lg'
               src={item.media.source}
               alt={item.name}
             />
@@ -84,7 +84,7 @@ function ProductProfile({ products, match, fetchProducts, onAddToCart }) {
                   disabled={item.is.sold_out}
                 >
                   <svg
-                    className='h-5 w-5'
+                    className='h-7 md:h-5 md:w-5'
                     fill='none'
                     stroke-linecap='round'
                     stroke-linejoin='round'
@@ -102,7 +102,7 @@ function ProductProfile({ products, match, fetchProducts, onAddToCart }) {
                   disabled={item.is.sold_out}
                 >
                   <svg
-                    className='h-5 w-5'
+                    className='h-7 md:h-5 md:w-5'
                     fill='none'
                     stroke-linecap='round'
                     stroke-linejoin='round'
@@ -116,7 +116,7 @@ function ProductProfile({ products, match, fetchProducts, onAddToCart }) {
               </div>
               <button
                 onClick={() => onAddToCart(item.id, quantity)}
-                class='flex uppercase mt-5 px-3 py-2 bg-yellow-900 text-white text-sm font-medium rounded hover:bg-yellow-800 focus:outline-none focus:bg-yellow-800 disabled:opacity-30'
+                className='flex uppercase mt-5 px-3 py-2 bg-yellow-900 text-white text-sm font-medium rounded hover:bg-yellow-800 focus:outline-none focus:bg-yellow-800 disabled:opacity-30'
                 disabled={item.is.sold_out}
               >
                 {item.is.sold_out ? <p>Sold Out</p> : <p>Add to Cart</p>}{' '}

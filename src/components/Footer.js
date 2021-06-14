@@ -2,40 +2,40 @@ import React from 'react';
 
 function Footer() {
   return (
-    <div class='w-full min-h-3/6 flex items-center justify-center bg-yellow-900 mt-8 pt-7 md:mt-10 md:pt-10'>
-      <div class='md:w-2/3 w-full px-4 text-white flex flex-col'>
-        <div class='w-full text-7xl font-bold'>
-          <h1 class='w-full md:w-2/3'>Find us.</h1>
+    <div className='w-full min-h-3/6 flex items-center justify-center bg-yellow-900 mt-8 pt-7 md:mt-10 md:pt-10'>
+      <div className='md:w-2/3 w-full px-4 text-white flex flex-col'>
+        <div className='w-full text-7xl font-bold'>
+          <h1 className='w-full md:w-2/3'>Find us.</h1>
         </div>
-        <div class='flex mt-8 flex-col md:flex-row md:justify-between'>
-          <p class='w-full md:w-2/3 text-white'>
+        <div className='flex mt-8 flex-col md:flex-row md:justify-between'>
+          <p className='w-full md:w-2/3 text-white'>
             Corporate Office Address: 194-0013 Tokyo, Machida, Haramachida, 6
             Chome−9−8, Aeta Machida, 4th Floor BUSO AGORA
           </p>
-          <div class='w-44 pt-6 md:pt-0'>
-            <a class='bg-yellow-300 text-yellow-900 font-bold justify-center text-center rounded-lg shadow px-10 py-3 flex items-center'>
+          <div className='w-44 pt-6 md:pt-0'>
+            <a className='bg-yellow-300 text-yellow-900 font-bold justify-center text-center rounded-lg shadow px-10 py-3 flex items-center'>
               Contact US
             </a>
           </div>
         </div>
-        <div class='flex flex-col'>
-          <div class='flex mt-24 mb-12 flex-row justify-between'>
-            <div class=''>
+        <div className='flex flex-col'>
+          <div className='flex mt-24 mb-12 flex-row justify-between'>
+            <div className=''>
               <strong className='text-xl text-yellow-300'>SAPONIFY</strong>
             </div>
-            <a class='hidden md:block cursor-pointer text-white hover:text-white uppercase'>
+            <a className='hidden md:block cursor-pointer text-white hover:text-white uppercase'>
               About
             </a>
-            <a class='hidden md:block cursor-pointer text-white hover:text-white uppercase'>
+            <a className='hidden md:block cursor-pointer text-white hover:text-white uppercase'>
               Services
             </a>
-            <a class='hidden md:block cursor-pointer text-white hover:text-white uppercase'>
+            <a className='hidden md:block cursor-pointer text-white hover:text-white uppercase'>
               Why us
             </a>
-            <a class='hidden md:block cursor-pointer text-white hover:text-white uppercase'>
+            <a className='hidden md:block cursor-pointer text-white hover:text-white uppercase'>
               Contact
             </a>
-            <div class='flex flex-row space-x-8 items-center justify-between'>
+            <div className='flex flex-row space-x-8 items-center justify-between'>
               <a>
                 <svg
                   width='6'
@@ -88,8 +88,8 @@ function Footer() {
               </a>
             </div>
           </div>
-          <hr class='border-white' />
-          <p class='w-full text-center my-12 text-white'>
+          <hr className='border-white' />
+          <p className='w-full text-center my-12 text-white'>
             Created in React by Jerome Tolentino
           </p>
         </div>
