@@ -12,7 +12,7 @@ function Footer() {
             Corporate Office Address: 194-0013 Tokyo, Machida, Haramachida, 6
             Chome−9−8, Aeta Machida, 4th Floor BUSO AGORA
           </p>
-          <div className='w-44 pt-6 md:pt-0'>
+          <div id='contact' className='w-44 pt-6 md:pt-0'>
             <a className='bg-yellow-300 text-yellow-900 font-bold justify-center text-center rounded-lg shadow px-10 py-3 flex items-center'>
               Contact US
             </a>

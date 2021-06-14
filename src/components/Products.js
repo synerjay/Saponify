@@ -15,7 +15,7 @@ const Products = ({ products, onAddToCart, emptyErrors }) => {
     <main className='flex flex-col justify-center z-0 mt-0 md:mt-0 relative'>
       <CarouselSlide />
       <Services />
-      <hr className='my-3'></hr>
+      <hr id='products' className='my-3'></hr>
       <h1 className='md:mt-7 text-center text-4xl underline text-yellow-900 uppercase'>
         Our Products
       </h1>
