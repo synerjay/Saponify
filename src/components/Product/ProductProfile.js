@@ -41,7 +41,7 @@ function ProductProfile({ products, match, fetchProducts, onAddToCart }) {
   }, [products]);
 
   return (
-    <main className='mt-14 md:mt-20 w-screen h-auto md:h-full md:mb-36 '>
+    <main className='mt-0 md:mt-8 w-screen h-auto md:h-full md:mb-36 '>
       {item && (
         <div className='flex flex-col md:flex-row justify-center gap-x-14 '>
           <div className='flex flex-col relative'>

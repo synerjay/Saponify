@@ -4,7 +4,6 @@ import Cart from './components/Cart/Cart';
 import Checkout from './components/CheckOutForm/Checkout/Checkout';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar/Navbar';
-import Product from './components/Product/Product';
 import ProductProfile from './components/Product/ProductProfile';
 import Products from './components/Products';
 import { commerce } from './lib/commerce';

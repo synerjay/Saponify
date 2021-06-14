@@ -12,7 +12,7 @@ const Products = ({ products, onAddToCart, emptyErrors }) => {
   }, []);
 
   return (
-    <main className='flex flex-col justify-center mt-16 md:mt-16'>
+    <main className='flex flex-col justify-center z-0 mt-0 md:mt-0 relative'>
       <CarouselSlide />
       <Services />
       <hr className='my-3'></hr>
