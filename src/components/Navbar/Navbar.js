@@ -107,7 +107,10 @@ const Navbar = ({ totalItems }) => {
           </div>
 
           <div className='flex justify-center md:block'>
-            <a className='relative text-gray-700 hover:text-gray-600' href='#'>
+            <Link
+              className='relative inline-block text-gray-700 hover:text-gray-600'
+              to='/cart'
+            >
               <svg
                 className='h-5 w-5'
                 viewBox='0 0 24 24'
@@ -123,8 +126,12 @@ const Navbar = ({ totalItems }) => {
                 />
               </svg>
 
-              <span className='absolute top-0 left-0 rounded-full bg-indigo-500 text-white p-1 text-xs'></span>
-            </a>
+              {totalItems === 0 ? null : (
+                <span class='absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full'>
+                  {totalItems}
+                </span>
+              )}
+            </Link>
           </div>
         </div>
       </div>
