@@ -43,16 +43,16 @@ function ProductProfile({ products, match, fetchProducts, onAddToCart }) {
   return (
     <div className='mt-20 w-screen mb-36 '>
       {item && (
-        <div className='flex flex-row justify-center gap-x-14 '>
+        <div className='flex flex-col md:flex-row justify-center gap-x-14 '>
           <div className='flex flex-col relative'>
             <img
-              class='h-full w-full rounded-md object-cover max-w-lg mx-auto'
+              class='h-32 w-full md:h-full rounded-md object-cover max-w-lg mx-auto'
               src={item.media.source}
               alt={item.name}
             />
             <div
               className={
-                'badge text-white text-xl absolute top-0 p-4 ml-2 mt-2 ' +
+                'badge text-white text-sm md:text-xl absolute top-0 p-4 ml-2 mt-2 ' +
                 (item.is.sold_out ? 'bg-red-500 ' : 'bg-green-500')
               }
             >
@@ -63,7 +63,7 @@ function ProductProfile({ products, match, fetchProducts, onAddToCart }) {
               )}
             </div>
           </div>
-          <div className='flex flex-col w-72 '>
+          <div className='flex flex-col w-full p-6 md:p-0 md:w-72 '>
             <h1 className='font-bold text-yellow-900 text-2xl'>{item.name}</h1>
             <span
               dangerouslySetInnerHTML={{ __html: item.description }}
