@@ -14,6 +14,14 @@ import useStyles from './styles';
 const CartItem = ({ item, handleUpdateCartQty, handleRemoveFromCart }) => {
   const classes = useStyles();
 
+  // IMAGE: item.media.source
+  // ITEM NAME: item.name
+  // EACH ITEM TOTAL: item.line_total.formatted_with_symbol
+  // DECREMENT BUTTON: onClick={() => handleUpdateCartQty(item.id, item.quantity - 1)}
+  // ITEM QUANTITY: onClick={() => handleUpdateCartQty(item.id, item.quantity + 1)}
+  // INCREMENT BUTTON: item.quantity
+  // REMOVE ITEM FROM CART: onClick={() => handleRemoveFromCart(item.id)}
+
   return (
     <div>
       <Card>

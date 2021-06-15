@@ -19,7 +19,7 @@ const Products = ({ products, onAddToCart, emptyErrors }) => {
       <h1 className='md:mt-7 text-center text-4xl underline text-yellow-900 uppercase'>
         Our Products
       </h1>
-      <div className='mt-0 p-5 md:px-16 grid gap-10 md:grid-cols-3'>
+      <div className='GridContainer mt-0 p-5 md:px-16 grid gap-10 md:grid-cols-3'>
         {products.map((item) => (
           <Product item={item} onAddToCart={onAddToCart} />
         ))}
