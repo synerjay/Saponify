@@ -1,18 +1,7 @@
-import {
-  AppBar,
-  Badge,
-  IconButton,
-  Toolbar,
-  Typography,
-} from '@material-ui/core';
-import { ShoppingCart } from '@material-ui/icons';
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import logo from '../../assets/commerce.png';
-import useStyles from './styles';
 
 const Navbar = ({ totalItems }) => {
-  const classes = useStyles();
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -26,7 +15,6 @@ const Navbar = ({ totalItems }) => {
 
   return (
     <nav className='bg-white mx-auto px-6 py-3 shadow w-screen sticky top-0 z-50'>
-      {/* <div className='container mx-auto px-6 py-3 md:flex md:justify-between md:items-center'> */}
       <div className='FlexContainer flex justify-between items-center'>
         <div>
           <Link
@@ -141,35 +129,8 @@ const Navbar = ({ totalItems }) => {
 
         {/* END OF CART  */}
       </div>
-      {/* </div> */}
     </nav>
   );
 };
 
 export default Navbar;
-
-// <AppBar position='fixed' className={classes.appBar} color='inherit'>
-// <Toolbar>
-//   <Typography component={Link} to='/' className={classes.link}>
-//     <h2 className='text-3xl text-yellow-900 font-body'>
-//       <strong>SAPONIFY</strong>
-//     </h2>
-//   </Typography>
-//   <div className={classes.grow} />
-//   {location.pathname === '/cart' ||
-//   location.pathname === '/checkout' ? null : (
-//     <div className={classes.button}>
-//       <IconButton
-//         component={Link}
-//         to='/cart'
-//         aria-label='Show car items'
-//         color='inherit'
-//       >
-//         <Badge badgeContent={totalItems} color='secondary'>
-//           <ShoppingCart />
-//         </Badge>
-//       </IconButton>
-//     </div>
-//   )}
-// </Toolbar>
-// </AppBar>
