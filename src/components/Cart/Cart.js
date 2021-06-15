@@ -17,9 +17,9 @@ const Cart = ({
   const EmptyCart = () => (
     <div className='flex flex-col justify-center items-center'>
       <p className='text-xl mb-16'>
-        You currently have no items in your shopping cart.{' '}
+        Oops! You currently have no items in your shopping cart.{' '}
         <Link to='/#products' className='underline'>
-          Start adding some!
+          Why not add some!
         </Link>
       </p>
       <svg
@@ -450,7 +450,9 @@ const Cart = ({
 
   return (
     <div className='mt-5 text-center h-screen'>
-      <h2 className='text-2xl mb-5'>Your Shopping Cart</h2>
+      <h2 className='text-2xl mb-5 font-bold text-yellow-900'>
+        Your Shopping Cart
+      </h2>
       {!cart.line_items.length ? <EmptyCart /> : <FilledCart />}
     </div>
   );
