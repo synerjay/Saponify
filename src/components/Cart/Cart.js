@@ -20,7 +20,7 @@ const Cart = ({
   if (!cart.line_items) return 'Loading...';
 
   return (
-    <div className='mt-5 text-center h-screen'>
+    <div className='mt-5 text-center max-h-screen md:h-screen'>
       <h2 className='text-2xl mb-5 font-bold text-yellow-900'>
         Your Shopping Cart
       </h2>
