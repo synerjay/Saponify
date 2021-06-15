@@ -30,7 +30,7 @@ const Navbar = ({ totalItems }) => {
       <div className='FlexContainer flex justify-between items-center'>
         <div>
           <Link
-            className='text-gray-800 text-xl font-bold md:text-2xl hover:text-gray-700'
+            className='text-gray-800 text-xl font-bold md:text-2xl hover:text-yellow-900'
             to='/'
           >
             SAPONIFY
@@ -82,25 +82,25 @@ const Navbar = ({ totalItems }) => {
           >
             <div className='flex flex-col text-center md:flex-row md:mx-6'>
               <Link
-                className='my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0'
+                className='my-1 text-sm text-gray-700 font-medium hover:text-yellow-900 md:mx-4 md:my-0'
                 to='/'
               >
                 Home
               </Link>
               <a
-                className='my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0'
+                className='my-1 text-sm text-gray-700 font-medium hover:text-yellow-900 md:mx-4 md:my-0'
                 href='/#products'
               >
                 Shop
               </a>
               <a
-                className='my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0'
+                className='my-1 text-sm text-gray-700 font-medium hover:text-yellow-900 md:mx-4 md:my-0'
                 href='/#contact'
               >
                 Contact
               </a>
               <a
-                className='my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0'
+                className='my-1 text-sm text-gray-700 font-medium hover:text-yellow-900 md:mx-4 md:my-0'
                 href='#'
               >
                 About
@@ -111,7 +111,7 @@ const Navbar = ({ totalItems }) => {
             {location.pathname === '/cart' ||
             location.pathname === '/checkout' ? null : (
               <Link
-                className='relative inline-block text-gray-700 hover:text-gray-600'
+                className='relative inline-block text-gray-700 hover:text-yellow-900'
                 to='/cart'
               >
                 <svg
