@@ -37,9 +37,10 @@ const Navbar = ({ totalItems }) => {
           </Link>
         </div>
 
-        {/* <!-- Mobile menu button --> */}
+        {/* <!-- Cart & Menu --> */}
         <div className='CartAndMenu flex flex-row-reverse md:flex-row'>
-          <div className='flex md:hidden' onClick={handleToggle}>
+          {/* <!-- Mobile menu button --> */}
+          <div className='flex ml-5 md:hidden' onClick={handleToggle}>
             <button
               type='button'
               className='text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600'
@@ -75,7 +76,7 @@ const Navbar = ({ totalItems }) => {
           {/* <!-- Mobile Menu open: "block", Menu closed: "hidden" --> */}
           <div
             className={
-              'MenuPanel md:flex items-center shadow md:shadow-none absolute md:relative left-0 md:right-0 z-10 w-screen md:w-auto bg-white ' +
+              'MenuPanel mt-9 md:mt-0 md:flex items-center shadow md:shadow-none absolute md:relative left-0 md:right-0 z-10 w-screen md:w-auto bg-white ' +
               (menuOpen ? 'block' : 'hidden')
             }
           >
