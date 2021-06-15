@@ -25,19 +25,20 @@ const Navbar = ({ totalItems }) => {
   }, [menuOpen]);
 
   return (
-    <nav className='bg-white shadow w-screen sticky top-0 z-50'>
-      <div className='container mx-auto px-6 py-3 md:flex md:justify-between md:items-center'>
-        <div className='flex justify-between items-center'>
-          <div>
-            <Link
-              className='text-gray-800 text-xl font-bold md:text-2xl hover:text-gray-700'
-              to='/'
-            >
-              SAPONIFY
-            </Link>
-          </div>
+    <nav className='bg-white mx-auto px-6 py-3 shadow w-screen sticky top-0 z-50'>
+      {/* <div className='container mx-auto px-6 py-3 md:flex md:justify-between md:items-center'> */}
+      <div className='FlexContainer flex justify-between items-center'>
+        <div>
+          <Link
+            className='text-gray-800 text-xl font-bold md:text-2xl hover:text-gray-700'
+            to='/'
+          >
+            SAPONIFY
+          </Link>
+        </div>
 
-          {/* <!-- Mobile menu button --> */}
+        {/* <!-- Mobile menu button --> */}
+        <div className='CartAndMenu flex flex-row-reverse md:flex-row'>
           <div className='flex md:hidden' onClick={handleToggle}>
             <button
               type='button'
@@ -70,42 +71,41 @@ const Navbar = ({ totalItems }) => {
               )}
             </button>
           </div>
-        </div>
-
-        {/* <!-- Mobile Menu open: "block", Menu closed: "hidden" --> */}
-        <div
-          className={
-            'md:flex items-center shadow md:shadow-none absolute md:relative left-0 md:right-0 z-10 w-screen md:w-auto bg-white ' +
-            (menuOpen ? 'block' : 'hidden')
-          }
-        >
-          <div className='flex flex-col text-center md:flex-row md:mx-6'>
-            <Link
-              className='my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0'
-              to='/'
-            >
-              Home
-            </Link>
-            <a
-              className='my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0'
-              href='/#products'
-            >
-              Shop
-            </a>
-            <a
-              className='my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0'
-              href='/#contact'
-            >
-              Contact
-            </a>
-            <a
-              className='my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0'
-              href='#'
-            >
-              About
-            </a>
+          {/* PUT MENU BAR AND CART HERE */}
+          {/* <!-- Mobile Menu open: "block", Menu closed: "hidden" --> */}
+          <div
+            className={
+              'MenuPanel md:flex items-center shadow md:shadow-none absolute md:relative left-0 md:right-0 z-10 w-screen md:w-auto bg-white ' +
+              (menuOpen ? 'block' : 'hidden')
+            }
+          >
+            <div className='flex flex-col text-center md:flex-row md:mx-6'>
+              <Link
+                className='my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0'
+                to='/'
+              >
+                Home
+              </Link>
+              <a
+                className='my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0'
+                href='/#products'
+              >
+                Shop
+              </a>
+              <a
+                className='my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0'
+                href='/#contact'
+              >
+                Contact
+              </a>
+              <a
+                className='my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0'
+                href='#'
+              >
+                About
+              </a>
+            </div>
           </div>
-
           <div className='flex justify-center md:block'>
             <Link
               className='relative inline-block text-gray-700 hover:text-gray-600'
@@ -134,7 +134,10 @@ const Navbar = ({ totalItems }) => {
             </Link>
           </div>
         </div>
+
+        {/* END OF CART  */}
       </div>
+      {/* </div> */}
     </nav>
   );
 };
