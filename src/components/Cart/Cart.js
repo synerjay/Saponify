@@ -1,4 +1,4 @@
-import { Button, Container, Grid, Typography } from '@material-ui/core';
+import { Button, Grid, Typography } from '@material-ui/core';
 import React, { Fragment, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import CartItem from './CarItem/CartItem';
@@ -16,9 +16,9 @@ const Cart = ({
   });
   const EmptyCart = () => (
     <div className='flex flex-col justify-center items-center'>
-      <p className='text-xl mb-16'>
+      <p className='text-lg md:text-xl mb-16 mx-5'>
         Oops! You currently have no items in your shopping cart.{' '}
-        <Link to='/#products' className='underline'>
+        <Link to='/#products' className='underline font-bold'>
           Why not add some!
         </Link>
       </p>
