@@ -32,17 +32,16 @@ const CartItem = ({ item, handleUpdateCartQty, handleRemoveFromCart }) => {
       />
       <div className='m-4'>
         <span className='font-bold'>{item.name}</span>
-
-        <span className='block text-gray-500 text-sm'>
-          {item.line_total.formatted_with_symbol}
-        </span>
+        <button
+          onClick={() => handleRemoveFromCart(item.id)}
+          className='flex uppercase mt-5 px-3 py-2 bg-yellow-900 text-white text-xs font-medium rounded hover:bg-yellow-800 focus:outline-none focus:bg-yellow-800 disabled:opacity-30'
+        >
+          REMOVE
+        </button>
       </div>
-      <button
-        onClick={() => handleRemoveFromCart(item.id)}
-        className='bg-red-600 uppercase text-white rounded-full absolute top-0 right-0 p-2 mr-2 mt-2 shadow-xl disabled:opacity-50 focus hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-yellow-900 focus:ring-opacity-50'
-      >
-        Remove item
-      </button>
+      <div className='bg-green-600 uppercase text-white rounded-full absolute top-0 right-0 p-2 mr-2 mt-2 shadow-xl'>
+        ITEM TOTAL: {item.line_total.formatted_with_symbol}
+      </div>
     </div>
   );
 };
