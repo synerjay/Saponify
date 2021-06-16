@@ -32,7 +32,7 @@ const CartItem = ({ item, handleUpdateCartQty, handleRemoveFromCart }) => {
       />
       <div className='m-4'>
         <span className='font-bold'>{item.name}</span>
-        <div className='flex flex-row'>
+        <div className='flex flex-row justify-around'>
           <div className='mt-2'>
             <label className='text-gray-700 text-sm' for='count'>
               Quantity:
@@ -78,7 +78,7 @@ const CartItem = ({ item, handleUpdateCartQty, handleRemoveFromCart }) => {
           </div>
           <button
             onClick={() => handleRemoveFromCart(item.id)}
-            className='flex uppercase mt-5 px-3 py-2 bg-yellow-900 text-white text-xs font-medium rounded hover:bg-yellow-800 focus:outline-none focus:bg-yellow-800 disabled:opacity-30'
+            className='flex uppercase max-h-8 mt-5 px-3 py-2 bg-red-700 text-white text-xs font-medium rounded hover:bg-yellow-800 focus:outline-none focus:bg-yellow-800 disabled:opacity-30'
           >
             REMOVE
           </button>
