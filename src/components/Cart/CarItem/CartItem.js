@@ -78,9 +78,23 @@ const CartItem = ({ item, handleUpdateCartQty, handleRemoveFromCart }) => {
           </div>
           <button
             onClick={() => handleRemoveFromCart(item.id)}
-            className='flex uppercase max-h-8 mt-5 px-3 py-2 bg-red-700 text-white text-xs font-medium rounded hover:bg-yellow-800 focus:outline-none focus:bg-yellow-800 disabled:opacity-30'
+            className='flex uppercase gap-x-1 max-h-8 mt-5 px-3 py-2 bg-red-700 text-white text-xs font-medium rounded hover:bg-red-800 focus:outline-none focus:bg-red-700 disabled:opacity-30'
           >
-            REMOVE
+            Remove Item{' '}
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              className='h-4 w-4 inline-block'
+              fill='none'
+              viewBox='0 0 24 24'
+              stroke='currentColor'
+            >
+              <path
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth={2}
+                d='M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z'
+              />
+            </svg>
           </button>
         </div>
       </div>

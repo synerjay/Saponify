@@ -20,9 +20,9 @@ const Cart = ({
   if (!cart.line_items) return 'Loading...';
 
   return (
-    <div className='mt-5 text-center max-h-screen md:h-screen'>
+    <div className='mt-5 mb-9 text-center h-auto md:h-auto'>
       <h2 className='text-2xl mb-5 font-bold text-yellow-900'>
-        Your Shopping Cart
+        Your Shopping Cart{' '}
       </h2>
       {!cart.line_items.length ? (
         <EmptyCart />
