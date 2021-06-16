@@ -21,19 +21,19 @@ function FilledCart({
           />
         ))}
       </div>
-      <div className='SubAndCheckOut flex justify-between'>
-        <h2 className='flex text-xl items-center'>
+      <div className='SubAndCheckOut flex justify-around'>
+        <h2 className='flex text-lg items-center font-bold'>
           Subtotal: {cart.subtotal.formatted_with_symbol}
         </h2>
-        <div className='flex items-center justify-around'>
+        <div className='flex items-center gap-x-8'>
           <button
-            className='flex uppercase mt-5 px-3 py-2 bg-red-700 text-white text-sm font-medium rounded hover:bg-yellow-800 focus:outline-none focus:bg-yellow-800 disabled:opacity-30'
+            className='flex uppercase mt-5 px-3 py-2 bg-gray-900 text-white text-xs font-medium rounded hover:bg-gray-800 focus:outline-none focus:bg-yellow-800 disabled:opacity-30'
             onClick={handleEmptyCart}
           >
             Empty Cart
           </button>
           <Link to='/checkout'>
-            <button className='flex uppercase mt-5 px-3 py-2 bg-green-700 text-white text-sm font-medium rounded hover:bg-yellow-800 focus:outline-none focus:bg-yellow-800 disabled:opacity-30'>
+            <button className='flex uppercase mt-5 px-3 py-2 bg-yellow-900 text-white text-xs font-medium rounded hover:bg-yellow-800 focus:outline-none focus:bg-yellow-800 disabled:opacity-30'>
               Checkout
             </button>
           </Link>
