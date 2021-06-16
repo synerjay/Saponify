@@ -1,10 +1,6 @@
-import { Button, Grid, Typography } from '@material-ui/core';
-import React, { Fragment, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import CartItem from './CarItem/CartItem';
+import React, { useEffect } from 'react';
 import EmptyCart from './EmptyCart';
 import FilledCart from './FilledCart';
-import useStyles from './styles';
 
 const Cart = ({
   cart,
@@ -12,12 +8,12 @@ const Cart = ({
   handleRemoveFromCart,
   handleEmptyCart,
 }) => {
-  const classes = useStyles();
-  useEffect(() => {
-    console.log(cart);
-  });
-
-  if (!cart.line_items) return 'Loading...';
+  if (!cart.line_items)
+    return (
+      <div className='flex justify-center items-center h-screen'>
+        <h2 className='text-4xl font-bold text-center'>Loading...</h2>
+      </div>
+    );
 
   return (
     <div className='mt-5 mb-9 text-center h-auto md:h-auto'>
