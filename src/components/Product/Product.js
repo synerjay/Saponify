@@ -18,7 +18,7 @@ const Product = ({ item, onAddToCart }) => {
       <Link to={`/product/${item.id}`}>
         <img
           src={item.media.source}
-          alt='noodles'
+          alt={item.name}
           className='w-full h-32 sm:h-48 object-cover'
         />
         <div className='m-4'>
