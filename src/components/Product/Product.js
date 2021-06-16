@@ -39,7 +39,9 @@ const Product = ({ item, onAddToCart }) => {
       </div>
       <button
         onClick={() => onAddToCart(item.id, 1)}
-        className='bg-white rounded-full absolute top-0 right-0 p-2 mr-2 mt-2 shadow-xl disabled:opacity-50 focus hover:bg-yellow-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-yellow-900 focus:ring-opacity-50'
+        className='bg-white rounded-full absolute top-0 right-0 p-2 mr-2 mt-2 shadow-xl disabled:opacity-50 focus hover:bg-yellow-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-yellow-900 focus:ring-opacity-50 | transition
+              ease-out
+              duration-500'
         disabled={item.is.sold_out}
       >
         <AddShoppingCart />

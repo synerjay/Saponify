@@ -31,7 +31,7 @@ const Navbar = ({ totalItems }) => {
           <div className='flex ml-5 md:hidden' onClick={handleToggle}>
             <button
               type='button'
-              className='text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600'
+              className='text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600 transition ease-out duration-500'
               aria-label='toggle menu'
             >
               {' '}
@@ -64,7 +64,7 @@ const Navbar = ({ totalItems }) => {
           {/* <!-- Mobile Menu open: "block", Menu closed: "hidden" --> */}
           <div
             className={
-              'MenuPanel mt-9 md:mt-0 md:flex items-center shadow md:shadow-none absolute md:relative left-0 md:right-0 z-10 w-screen md:w-auto bg-white ' +
+              'MenuPanel mt-9 md:mt-0 md:flex items-center shadow md:shadow-none absolute md:relative left-0 md:right-0 z-10 w-screen md:w-auto bg-white transition ease-out duration-500 ' +
               (menuOpen ? 'block' : 'hidden')
             }
           >
