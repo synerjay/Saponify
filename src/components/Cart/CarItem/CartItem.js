@@ -18,8 +18,8 @@ const CartItem = ({ item, handleUpdateCartQty, handleRemoveFromCart }) => {
   // ITEM NAME: item.name
   // EACH ITEM TOTAL: item.line_total.formatted_with_symbol
   // DECREMENT BUTTON: onClick={() => handleUpdateCartQty(item.id, item.quantity - 1)}
-  // ITEM QUANTITY: onClick={() => handleUpdateCartQty(item.id, item.quantity + 1)}
-  // INCREMENT BUTTON: item.quantity
+  // ITEM QUANTITY: item.quantity
+  // INCREMENT BUTTON: onClick={() => handleUpdateCartQty(item.id, item.quantity + 1)}
   // REMOVE ITEM FROM CART: onClick={() => handleRemoveFromCart(item.id)}
 
   return (
@@ -32,12 +32,57 @@ const CartItem = ({ item, handleUpdateCartQty, handleRemoveFromCart }) => {
       />
       <div className='m-4'>
         <span className='font-bold'>{item.name}</span>
-        <button
-          onClick={() => handleRemoveFromCart(item.id)}
-          className='flex uppercase mt-5 px-3 py-2 bg-yellow-900 text-white text-xs font-medium rounded hover:bg-yellow-800 focus:outline-none focus:bg-yellow-800 disabled:opacity-30'
-        >
-          REMOVE
-        </button>
+        <div className='flex flex-row'>
+          <div className='mt-2'>
+            <label className='text-gray-700 text-sm' for='count'>
+              Quantity:
+            </label>
+            <div className='flex items-center mt-1'>
+              {/* DECREMENT here */}
+              <button
+                onClick={() => handleUpdateCartQty(item.id, item.quantity - 1)}
+                className='text-gray-500 focus:outline-none focus:text-gray-600'
+              >
+                <svg
+                  className='h-7 md:h-5 md:w-5'
+                  fill='none'
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                  stroke-width='2'
+                  viewBox='0 0 24 24'
+                  stroke='currentColor'
+                >
+                  <path d='M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z'></path>
+                </svg>
+              </button>
+              <span className='text-gray-700 text-lg mx-2'>
+                {item.quantity}
+              </span>
+              <button
+                onClick={() => handleUpdateCartQty(item.id, item.quantity + 1)}
+                className='text-gray-500 focus:outline-none focus:text-gray-600'
+              >
+                <svg
+                  className='h-7 md:h-5 md:w-5'
+                  fill='none'
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                  stroke-width='2'
+                  viewBox='0 0 24 24'
+                  stroke='currentColor'
+                >
+                  <path d='M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z'></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <button
+            onClick={() => handleRemoveFromCart(item.id)}
+            className='flex uppercase mt-5 px-3 py-2 bg-yellow-900 text-white text-xs font-medium rounded hover:bg-yellow-800 focus:outline-none focus:bg-yellow-800 disabled:opacity-30'
+          >
+            REMOVE
+          </button>
+        </div>
       </div>
       <div className='bg-green-600 uppercase text-white rounded-full absolute top-0 right-0 p-2 mr-2 mt-2 shadow-xl'>
         ITEM TOTAL: {item.line_total.formatted_with_symbol}
