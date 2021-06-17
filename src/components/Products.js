@@ -4,6 +4,7 @@ import CarouselSlide from './Carousel/Carousel';
 import Product from './Product/Product';
 import Services from './Services';
 import useStyles from './styles';
+import { withRouter } from 'react-router';
 
 const Products = ({ products, onAddToCart, emptyErrors }) => {
   const classes = useStyles();
@@ -28,4 +29,4 @@ const Products = ({ products, onAddToCart, emptyErrors }) => {
   );
 };
 
-export default Products;
+export default withRouter(Products);

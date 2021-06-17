@@ -22,8 +22,6 @@ const AddressForm = ({ checkoutToken, next }) => {
   const [shippingOptions, setShippingOptions] = useState([]);
   const [shippingOption, setShippingOption] = useState('');
 
-  console.log(shippingCountry);
-
   // Make To make everything from object to an Array object
   // Object.entries() method returns an array an array [[key, value], [key,value]]
   // because now shippingCountries is an array, we can use map method to make it an array of objects
@@ -31,9 +29,9 @@ const AddressForm = ({ checkoutToken, next }) => {
     id: code,
     label: name,
   }));
-  const subdivisions = Object.entries(
-    shippingSubdivisions
-  ).map(([code, name]) => ({ id: code, label: name }));
+  const subdivisions = Object.entries(shippingSubdivisions).map(
+    ([code, name]) => ({ id: code, label: name })
+  );
 
   const options = shippingOptions.map((sO) => ({
     id: sO.id,
@@ -49,7 +47,6 @@ const AddressForm = ({ checkoutToken, next }) => {
       checkoutTokenId
     );
 
-    console.log(countries);
     setShippingCountries(countries);
     setShippingCountry(Object.keys(countries)[0]); // initial state is the first country in the list
     // Object.keys(object) returns an array of Keys
