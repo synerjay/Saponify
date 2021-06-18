@@ -2,8 +2,8 @@ import React from 'react';
 
 function About() {
   return (
-    <div className='h-auto flex flex-col justify-center items-center mx-24 my-10'>
-      <div className='justify-center text-base'>
+    <div className='h-auto flex flex-col justify-center items-center mx-32 my-10'>
+      <div className='justify-center flex flex-col gap-y-4 text-base mb-10'>
         <h2 className='text-center text-2xl font-bold underline uppercase'>
           About us
         </h2>
@@ -27,19 +27,36 @@ function About() {
       </div>
       <hr />
       <div>
-        <h1 className='text-center'>The Team at Saponify</h1>
-        <div className='flex flex-col md:flex-row md:gap-x-24 '>
-          <div>
-            <h4>Jiro - Operations Director</h4>
-            <img src='' />
+        <h1 className='text-center text-2xl font-bold underline uppercase mb-5'>
+          The Team at Saponify
+        </h1>
+        <div className='flex flex-col md:flex-row md:gap-x-12 '>
+          <div className='flex flex-col justify-center'>
+            <h4 className='text-xl font-bold my-2 text-center'>
+              Jiro - Operations Director
+            </h4>
+            <img
+              className='rounded-full border h-80 w-80 object-cover border-gray-100 shadow-xl'
+              src='https://images.pexels.com/photos/937481/pexels-photo-937481.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260'
+            />
           </div>
-          <div>
-            <h4>Mika - Supply Manager</h4>
-            <img src='' />
+          <div className='flex flex-col justify-center'>
+            <h4 className='text-xl font-bold my-2 text-center'>
+              Mika - Supply Manager
+            </h4>
+            <img
+              className='rounded-full border h-80 w-80 object-cover border-gray-100 shadow-sm'
+              src='https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
+            />
           </div>
-          <div>
-            <h4>Chihiro - Marketing</h4>
-            <img src='' />
+          <div className='flex flex-col justify-center'>
+            <h4 className='text-xl font-bold my-2 text-center'>
+              Michelle - Marketing
+            </h4>
+            <img
+              className='rounded-full border h-80 w-80 object-cover border-gray-100 shadow-sm'
+              src='https://images.pexels.com/photos/3681591/pexels-photo-3681591.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500'
+            />
           </div>
         </div>
       </div>
