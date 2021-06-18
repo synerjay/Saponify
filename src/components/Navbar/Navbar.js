@@ -10,8 +10,8 @@ const Navbar = ({ totalItems }) => {
   };
 
   useEffect(() => {
-    console.log(menuOpen);
-  }, [menuOpen]);
+    setMenuOpen(false);
+  }, []);
 
   return (
     <nav className='bg-white mx-auto px-6 py-3 shadow w-screen sticky top-0 z-50'>

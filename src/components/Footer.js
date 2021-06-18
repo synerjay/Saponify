@@ -2,10 +2,10 @@ import React from 'react';
 
 function Footer() {
   return (
-    <div className='hidden md:w-full md:h-3/6 md:flex md:items-center md:justify-center bg-yellow-900 mt-8 pt-7 md:mt-10 md:pt-10'>
+    <div className='hidden md:w-full md:h-3/6 md:flex md:items-center md:justify-center bg-gray-800 mt-8 pt-7 md:mt-10 md:pt-10'>
       <div className='md:w-2/3 w-full px-4 text-white flex flex-col'>
         <div className='w-full text-7xl font-bold'>
-          <h1 className='w-full md:w-2/3'>Find us.</h1>
+          <h2 className='w-full md:w-2/3 text-4xl'>Find us.</h2>
         </div>
         <div className='flex mt-8 flex-col md:flex-row md:justify-between'>
           <p className='w-full md:w-2/3 text-white'>
@@ -13,7 +13,7 @@ function Footer() {
             Chome−9−8, Aeta Machida, 4th Floor BUSO AGORA
           </p>
           <div id='contact' className='w-44 pt-6 md:pt-0'>
-            <a className='bg-yellow-300 text-yellow-900 font-bold justify-center text-center rounded-lg shadow px-10 py-3 flex items-center'>
+            <a className='bg-gray-600 text-white font-bold justify-center text-center rounded-lg shadow px-10 py-3 flex items-center'>
               Contact US
             </a>
           </div>
@@ -21,7 +21,7 @@ function Footer() {
         <div className='flex flex-col'>
           <div className='flex mt-24 mb-12 flex-row justify-between'>
             <div className=''>
-              <strong className='text-xl text-yellow-300'>SAPONIFY</strong>
+              <strong className='text-xl text-white'>SAPONIFY</strong>
             </div>
             <a className='hidden md:block cursor-pointer text-white hover:text-white uppercase'>
               About
