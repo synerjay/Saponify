@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import About from './components/About';
 import Cart from './components/Cart/Cart';
 import Checkout from './components/CheckOutForm/Checkout/Checkout';
 import Footer from './components/Footer';
@@ -127,6 +128,9 @@ const App = () => {
               onCaptureCheckout={handleCaptureCheckout}
               error={errorMessage}
             />
+          </Route>
+          <Route exact path='/about'>
+            <About />
           </Route>
         </Switch>
         <Footer />

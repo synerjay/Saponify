@@ -87,12 +87,12 @@ const Navbar = ({ totalItems }) => {
               >
                 Contact
               </a>
-              <a
+              <Link
                 className='my-1 text-sm text-gray-700 font-medium hover:text-yellow-900 md:mx-4 md:my-0'
-                href='#'
+                to='/about'
               >
                 About
-              </a>
+              </Link>
             </div>
           </div>
           <div className='flex justify-center md:block'>
