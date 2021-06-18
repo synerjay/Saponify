@@ -2,15 +2,15 @@ import React from 'react';
 
 function About() {
   return (
-    <div className='h-auto flex flex-col justify-center items-center mx-32 my-10'>
+    <div className='h-auto flex flex-col justify-center items-center mx-10 md:mx-32 my-10'>
       <div className='justify-center flex flex-col gap-y-4 text-base mb-10'>
         <h2 className='text-center text-2xl font-bold underline uppercase'>
           About us
         </h2>
         <p>
           Here at Saponify we pride ourselves in delivering the highest quality
-          artisan soaps to your home. I hope our soaps can bring so much joy to
-          your life.
+          artisan soaps to your home. Our company mission to produce products
+          that bring joy & comfort to your life.
         </p>
 
         <p>
@@ -30,7 +30,7 @@ function About() {
         <h1 className='text-center text-2xl font-bold underline uppercase mb-5'>
           The Team at Saponify
         </h1>
-        <div className='flex flex-col md:flex-row md:gap-x-12 '>
+        <div className='flex flex-col gap-y-8 md:gap-y-0 md:flex-row md:gap-x-12 '>
           <div className='flex flex-col justify-center'>
             <h4 className='text-xl font-bold my-2 text-center'>
               Jiro - Operations Director
