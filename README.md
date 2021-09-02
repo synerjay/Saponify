@@ -15,7 +15,7 @@ The landing page features a beautiful carousel of artisan soaps. Clients are abl
 Clients can click on the "Add to Cart" icon on the product which automatically adds the item to the cart before purchase.
 <img src="https://github.com/synerjay/Saponify/blob/main/screenshots/Productslineup.png?raw=true" />
 
-This ecommerce site has a sleek design and is suitable for this kind of niche shop. This is the project that let me practice Tailwind CSS alongside with React for the first time which help me learn about the basics of web design. 
+This ecommerce site has a sleek design and is suitable for this kind of niche shop. This was the project that let me practice Tailwind CSS alongside with React for the first time which help me learn about the basics of web design. 
 
 
 See a live demo here: https://saponify.netlify.app/
