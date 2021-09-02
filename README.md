@@ -1,5 +1,7 @@
 # SAPONIFY Ecommerce Site
 
+<img src="https://github.com/synerjay/Saponify/blob/main/screenshots/saponifylogo.png?raw=true" />
+
 ## About 
 Saponify is an ecommerce site selling handcrafted artisan soaps. Built with a React front and a Commerce.js Headless CMI handling the backend order processing and product line ups, I wanted to try if I can build an efficient ecommerce site with a headless CMI. Stripe API is used to handle online credit card transactions. 
 
